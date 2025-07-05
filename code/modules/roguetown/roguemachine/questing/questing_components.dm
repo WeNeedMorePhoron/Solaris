@@ -156,13 +156,15 @@
 	if(QDELETED(parent))
 		return
 	
+	var/datum/quest/Q = quest_ref?.resolve()
+	
 	if(ismob(parent))
 		var/mob/M = parent
 		M.remove_filter(outline_filter_id)
 	else if(isitem(parent))
 		var/obj/item/I = parent
 		I.remove_filter(outline_filter_id)
-		var/datum/quest/Q = quest_ref?.resolve()
-		if(!Q?.complete)
+		// Only delete the item if it's part of an incomplete fetch or courier quest
+		if(Q && !Q.complete && ((Q.quest_type == "Fetch" && istype(I, Q.target_item_type)) || (Q.quest_type == "Courier" && istype(I, Q.target_delivery_item))))
 			qdel(I)
 	qdel(src)

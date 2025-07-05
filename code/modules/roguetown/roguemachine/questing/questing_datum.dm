@@ -49,7 +49,11 @@
 		if(Q && Q.quest_ref?.resolve() == src && !QDELETED(I))
 			I.remove_filter("quest_item_outline")
 			qdel(Q)
-			// Don't delete the item itself here to prevent loops
+			// Only delete the item if it's part of a fetch or courier quest
+			if(quest_type == "Fetch" && istype(I, target_item_type))
+				qdel(I)
+			else if(quest_type == "Courier" && istype(I, target_delivery_item))
+				qdel(I)
 
 	// Clean up references
 	quest_scroll = null

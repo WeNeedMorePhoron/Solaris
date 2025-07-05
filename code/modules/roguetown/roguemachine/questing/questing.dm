@@ -118,18 +118,18 @@
 	// First try to find landmarks that match both difficulty AND type
 	var/list/correctest_landmarks = list()
 	for(var/obj/effect/landmark/quest_spawner/landmark in GLOB.landmarks_list)
-		if((difficulty in landmark.quest_difficulty) && (type in landmark.quest_type))
+		if(landmark.quest_difficulty == difficulty && (type in landmark.quest_type))
 			correctest_landmarks += landmark
-	
+
 	if(length(correctest_landmarks))
 		return pick(correctest_landmarks)
 
 	// If none found, try landmarks that match just the difficulty
 	var/list/correcter_landmarks = list()
 	for(var/obj/effect/landmark/quest_spawner/landmark in GLOB.landmarks_list)
-		if(difficulty in landmark.quest_difficulty)
+		if(landmark.quest_difficulty == difficulty)
 			correcter_landmarks += landmark
-	
+
 	if(length(correcter_landmarks))
 		return pick(correcter_landmarks)
 
@@ -137,7 +137,7 @@
 	var/list/fallback_landmarks = list()
 	for(var/obj/effect/landmark/quest_spawner/landmark in GLOB.landmarks_list)
 		fallback_landmarks += landmark
-	
+
 	if(length(fallback_landmarks))
 		return pick(fallback_landmarks)
 
@@ -222,6 +222,28 @@
 	var/refund = quest.quest_difficulty == "Easy" ? 5 : \
 				quest.quest_difficulty == "Medium" ? 10 : 20
 
+	// First try to return to quest giver
+	var/mob/giver = quest.quest_giver_reference?.resolve()
+	if(giver && (giver in SStreasury.bank_accounts))
+		SStreasury.bank_accounts[giver] += refund
+		SStreasury.treasury_value -= refund
+		SStreasury.log_entries += "-[refund] from treasury (quest refund to handler)"
+		to_chat(user, span_notice("The deposit has been returned to the quest giver."))
+	// Otherwise try quest receiver
+	else if(quest.quest_receiver_reference)
+		var/mob/receiver = quest.quest_receiver_reference.resolve()
+		if(receiver && (receiver in SStreasury.bank_accounts))
+			SStreasury.bank_accounts[receiver] += refund
+			SStreasury.treasury_value -= refund
+			SStreasury.log_entries += "-[refund] from treasury (quest refund to volunteer)"
+			to_chat(user, span_notice("You receive a [refund] mark refund for abandoning the quest."))
+		else
+			cash_in(refund)
+			SStreasury.treasury_value -= refund
+			SStreasury.log_entries += "-[refund] from treasury (quest refund)"
+			to_chat(user, span_notice("Your refund of [refund] marks has been dispensed."))
+
+	// Clean up quest items
 	if(quest.quest_type == "Courier" && quest.target_delivery_item)
 		quest.target_delivery_item = null
 		for(var/obj/item/I in world)
@@ -235,18 +257,6 @@
 	abandoned_scroll.assigned_quest = null
 	qdel(quest)
 	qdel(abandoned_scroll)
-
-	if(refund > 0)
-		if(user in SStreasury.bank_accounts)
-			SStreasury.bank_accounts[user] += refund
-			SStreasury.treasury_value -= refund
-			SStreasury.log_entries += "-[refund] from treasury (quest refund)"
-			to_chat(user, span_notice("You receive a [refund] mark refund for abandoning the quest."))
-		else
-			cash_in(refund)
-			SStreasury.treasury_value -= refund
-			SStreasury.log_entries += "-[refund] from treasury (quest refund)"
-			to_chat(user, span_notice("Your refund of [refund] marks has been dispensed."))
 
 /obj/structure/roguemachine/questgiver/proc/print_quests(mob/user)
 	if(!guild)

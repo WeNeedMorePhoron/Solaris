@@ -1,16 +1,48 @@
 /obj/item/paper/scroll/quest
 	name = "enchanted quest scroll"
-	desc = "A weathered scroll enchanted to list the active quests from the Adventurers' Guild."
+	desc = "A weathered scroll enchanted to list the active quests from the Adventurers' Guild. The magical protections make it resistant to damage and tampering."
 	icon = 'code/modules/roguetown/roguemachine/questing/questing.dmi'
 	icon_state = "scroll_quest"
 	var/base_icon_state = "scroll_quest"
 	var/datum/quest/assigned_quest
+	var/last_compass_direction = ""
+	var/last_z_level_hint = ""
+	resistance_flags = FIRE_PROOF | LAVA_PROOF | INDESTRUCTIBLE | UNACIDABLE
+	max_integrity = 1000
+	armor = list("blunt" = 100, "slash" = 100, "stab" = 100, "piercing" = 100, "fire" = 100, "acid" = 100)
 
 /obj/item/paper/scroll/quest/Initialize()
 	. = ..()
 	if(assigned_quest)
 		assigned_quest.quest_scroll = src 
 	update_quest_text()
+
+/obj/item/paper/scroll/quest/Destroy()
+	if(assigned_quest)
+		// Return deposit if scroll is destroyed before completion
+		if(!assigned_quest.complete)
+			var/refund = assigned_quest.quest_difficulty == "Easy" ? 5 : \
+						assigned_quest.quest_difficulty == "Medium" ? 10 : 20
+			
+			// First try to return to quest giver if available
+			var/mob/giver = assigned_quest.quest_giver_reference?.resolve()
+			if(giver && (giver in SStreasury.bank_accounts))
+				SStreasury.bank_accounts[giver] += refund
+				SStreasury.treasury_value -= refund
+				SStreasury.log_entries += "-[refund] from treasury (quest scroll destroyed refund to giver [giver.real_name])"
+			// Otherwise try quest receiver
+			else if(assigned_quest.quest_receiver_reference)
+				var/mob/receiver = assigned_quest.quest_receiver_reference.resolve()
+				if(receiver && (receiver in SStreasury.bank_accounts))
+					SStreasury.bank_accounts[receiver] += refund
+					SStreasury.treasury_value -= refund
+					SStreasury.log_entries += "-[refund] from treasury (quest scroll destroyed refund to receiver [receiver.real_name])"
+		
+		// Clean up the quest
+		qdel(assigned_quest)
+		assigned_quest = null
+	
+	return ..()
 
 /obj/item/paper/scroll/quest/update_icon_state()
 	if(open)
@@ -30,13 +62,39 @@
 	else
 		. += span_notice("\nThis quest is still in progress.")
 
+/obj/item/paper/scroll/quest/attackby(obj/item/P, mob/living/carbon/human/user, params)
+	if(P.get_sharpness())
+		to_chat(user, span_warning("The enchanted scroll resists your attempts to tear it."))
+		return
+	if(istype(P, /obj/item/paper)) // Prevent merging with other papers/scrolls
+		to_chat(user, span_warning("The magical energies prevent you from combining this with other scrolls."))
+		return
+	if(istype(P, /obj/item/natural/thorn) || istype(P, /obj/item/natural/feather))
+		if(!open)
+			to_chat(user, span_warning("You need to open the scroll first."))
+			return
+		if(!assigned_quest)
+			to_chat(user, span_warning("This quest scroll doesn't accept modifications."))
+			return
+	..()
+
+/obj/item/paper/scroll/quest/fire_act(exposed_temperature, exposed_volume)
+	return // Immune to fire
+
+/obj/item/paper/scroll/quest/extinguish()
+	return // No fire to extinguish
+
 /obj/item/paper/scroll/quest/attack_self(mob/user)
 	. = ..()
 	if(.)
 		return
 
+	// Always refresh compass when opened
+	refresh_compass(user)
+
+	// Only do claim logic if unclaimed
 	if(!assigned_quest || assigned_quest.quest_receiver_reference)
-		return
+		return TRUE
 
 	assigned_quest.quest_receiver_reference = WEAKREF(user)
 	assigned_quest.quest_receiver_name = user.real_name
@@ -74,6 +132,11 @@
 	scroll_text += "<b>Type:</b> [assigned_quest.quest_type] quest.<br>"
 	scroll_text += "<b>Difficulty:</b> [assigned_quest.quest_difficulty].<br><br>"
 
+	if(last_compass_direction)
+		scroll_text += "<b>Direction:</b> [last_compass_direction].<br>"
+		if(last_z_level_hint)
+			scroll_text += " ([last_z_level_hint])"
+
 	switch(assigned_quest.quest_type)
 		if("Fetch")
 			scroll_text += "<b>Objective:</b> Retrieve [assigned_quest.target_amount] [initial(assigned_quest.target_item_type.name)].<br>"
@@ -106,6 +169,160 @@
 		scroll_text += "<br><i>The magic in this scroll will update as you progress.</i>"
 	
 	info = scroll_text
+	update_icon()
+
+/obj/item/paper/scroll/quest/proc/refresh_compass(mob/user)
+	if(!assigned_quest || assigned_quest.complete)
+		return FALSE
+	
+	// Update compass with precise directions
+	update_compass(user)
+	
+	// Only update text if we have a valid direction
+	if(last_compass_direction)
+		update_quest_text()
+		return TRUE
+	
+	return FALSE
+
+/obj/item/paper/scroll/quest/proc/update_compass(mob/user)
+	if(!assigned_quest || assigned_quest.complete)
+		return
+
+	var/turf/user_turf = user ? get_turf(user) : get_turf(src)
+	if(!user_turf)
+		last_compass_direction = "No signal detected"
+		last_z_level_hint = ""
+		return
+
+	// Reset compass values
+	last_compass_direction = "Searching for target..."
+	last_z_level_hint = ""
+
+	var/atom/target
+	var/turf/target_turf
+	var/min_distance = INFINITY
+
+	// Find the appropriate target based on quest type
+	switch(assigned_quest.quest_type)
+		if("Fetch")
+			// Find the closest fetch item
+			for(var/obj/item/I in world)
+				if(istype(I, assigned_quest.target_item_type))
+					var/datum/component/quest_object/Q = I.GetComponent(/datum/component/quest_object)
+					if(Q && Q.quest_ref?.resolve() == assigned_quest)
+						var/dist = get_dist(user_turf, I)
+						if(!target || dist < min_distance)
+							target = I
+							min_distance = dist
+		if("Courier")
+			// Find the delivery location area
+			var/area/target_area = assigned_quest.target_delivery_location
+			if(target_area)
+				var/list/area_turfs = get_area_turfs(target_area)
+				if(length(area_turfs))
+					var/turf/center_turf = locate(world.maxx/2, world.maxy/2, user_turf.z)
+					min_distance = get_dist(user_turf, center_turf)
+					target = center_turf
+		if("Kill", "Clear Out", "Miniboss")
+			// Find the closest target mob
+			for(var/mob/living/M in world)
+				if(istype(M, assigned_quest.target_mob_type))
+					var/datum/component/quest_object/Q = M.GetComponent(/datum/component/quest_object)
+					if(Q && Q.quest_ref?.resolve() == assigned_quest)
+						var/dist = get_dist(user_turf, M)
+						if(!target || dist < min_distance)
+							target = M
+							min_distance = dist
+		if("Beacon")
+			if(assigned_quest.target_beacon)
+				min_distance = get_dist(user_turf, assigned_quest.target_beacon)
+				target = assigned_quest.target_beacon
+
+	if(!target || !(target_turf = get_turf(target)))
+		last_compass_direction = "Target location unknown"
+		last_z_level_hint = ""
+		return
+
+	// Handle Z-level differences first
+	if(target_turf.z != user_turf.z)
+		var/z_diff = abs(target_turf.z - user_turf.z)
+		last_compass_direction = "Target is on another level"
+		last_z_level_hint = target_turf.z > user_turf.z ? \
+			"[z_diff] level\s above you" : \
+			"[z_diff] level\s below you"
+		return
+
+	// Calculate direction from user to target
+	var/dx = target_turf.x - user_turf.x
+	var/dy = target_turf.y - user_turf.y
+	var/distance = sqrt(dx*dx + dy*dy)
+
+	// If very close, don't show direction
+	if(distance <= 7)
+		last_compass_direction = "Target is nearby"
+		last_z_level_hint = ""
+		return
+
+	// Calculate angle in degrees (0 = north, 90 = east)
+	// Note: Using ATAN2(dx, dy) gives correct cardinal directions
+	var/angle = ATAN2(dx, dy)
+	if(angle < 0)
+		angle += 360
+
+	// Get precise direction text
+	var/direction_text = get_precise_direction_from_angle(angle)
+
+	// Determine distance description
+	var/distance_text
+	switch(distance)
+		if(0 to 14)
+			distance_text = "very close"
+		if(15 to 40)
+			distance_text = "close"
+		if(41 to 100)
+			distance_text = ""
+		if(101 to INFINITY)
+			distance_text = "far away"
+
+	last_compass_direction = "Target is [distance_text] to the [direction_text]"
+	last_z_level_hint = "on this level"
+
+/obj/item/paper/scroll/quest/proc/get_precise_direction_from_angle(angle)
+	// Secondary intercardinal directions with 22.5° resolution
+	switch(angle)
+		if(0 to 22.5)
+			return "north"
+		if(22.5 to 45)
+			return "north-northeast"
+		if(45 to 67.5)
+			return "northeast"
+		if(67.5 to 90)
+			return "east-northeast"
+		if(90 to 112.5)
+			return "east"
+		if(112.5 to 135)
+			return "east-southeast"
+		if(135 to 157.5)
+			return "southeast"
+		if(157.5 to 180)
+			return "south-southeast"
+		if(180 to 202.5)
+			return "south"
+		if(202.5 to 225)
+			return "south-southwest"
+		if(225 to 247.5)
+			return "southwest"
+		if(247.5 to 270)
+			return "west-southwest"
+		if(270 to 292.5)
+			return "west"
+		if(292.5 to 315)
+			return "west-northwest"
+		if(315 to 337.5)
+			return "northwest"
+		if(337.5 to 360)
+			return "north-northwest"
 
 /obj/item/parcel
 	name = "parcel wrapping paper"

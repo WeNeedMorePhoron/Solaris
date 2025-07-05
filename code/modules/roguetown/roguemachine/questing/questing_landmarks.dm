@@ -86,6 +86,12 @@
 			new_quest.target_amount = 1
 			spawn_miniboss(new_quest)
 
+	// Initialize compass data for the quest
+	if(new_quest.quest_scroll_ref)
+		var/obj/item/paper/scroll/quest/scroll = new_quest.quest_scroll_ref.resolve()
+		if(scroll)
+			scroll.update_compass(user)
+
 	return new_quest
 
 /obj/effect/landmark/quest_spawner/proc/spawn_fetch_items(item_type, amount, datum/quest/quest)
