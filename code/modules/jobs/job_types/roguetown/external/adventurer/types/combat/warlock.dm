@@ -7,7 +7,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
 	outfit = /datum/outfit/job/roguetown/adventurer/warlock
-	category_tags = list(CTAG_ADVENTURER)
+	category_tags = list(CTAG_ADVENTURER, CTAG_COURTAGENT)
 	cmode_music = 'sound/music/combat_bandit_mage.ogg'
 
 /datum/outfit/job/roguetown/adventurer/warlock
