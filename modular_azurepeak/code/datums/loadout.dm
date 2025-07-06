@@ -23,6 +23,10 @@ GLOBAL_LIST_EMPTY(loadout_items)
 	name = "Card Deck"
 	path = /obj/item/toy/cards/deck
 
+/datum/loadout_item/tarot_deck
+	name = "Tarot Deck"
+	path = /obj/item/toy/cards/deck/tarot
+
 /datum/loadout_item/farkle_dice
 	name = "Farkle Dice Container"
 	path = /obj/item/storage/pill_bottle/dice/farkle
