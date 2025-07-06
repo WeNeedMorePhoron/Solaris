@@ -14,7 +14,7 @@
 		/mob/living/carbon/human/species/skeleton/npc/ambush,
 		/mob/living/carbon/human/species/human/northern/searaider/ambush
 	)
-	var/miniboss_mob = /mob/living/carbon/human/species/elf/dark/drowraider/ambush
+	var/miniboss_mob = /mob/living/simple_animal/hostile/boss/lost_swordsman
 
 /obj/effect/landmark/quest_spawner/proc/generate_quest(datum/quest/new_quest, mob/user)
 	new_quest.quest_receiver_reference = user ? WEAKREF(user) : null
