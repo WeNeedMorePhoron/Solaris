@@ -315,6 +315,19 @@
 	item_state = "psycross_s"
 	sellprice = 50
 
+/obj/item/clothing/neck/roguetown/psicross/pickup(mob/user)
+	. = ..()
+	var/mob/living/carbon/human/H = user
+	if(!H.mind)
+		return
+	if(ishuman(H))
+		if(HAS_TRAIT(H,TRAIT_HOLY_WEAKNESS))
+			to_chat(H, span_userdanger("I can't pick up the silver, it is my BANE!"))
+			H.Knockdown(20)
+			H.adjustFireLoss(60)
+			H.Paralyze(20)
+			H.fire_act(1,5)
+
 /obj/item/clothing/neck/roguetown/psicross/silver/pickup(mob/user)
 	. = ..()
 	var/mob/living/carbon/human/H = user
@@ -323,6 +336,12 @@
 	var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
 	var/datum/antagonist/werewolf/W = H.mind.has_antag_datum(/datum/antagonist/werewolf/)
 	if(ishuman(H))
+		if(HAS_TRAIT(H,TRAIT_SILVER_WEAKNESS))
+			to_chat(H, span_userdanger("I can't pick up the silver, it is my BANE!"))
+			H.Knockdown(20)
+			H.adjustFireLoss(60)
+			H.Paralyze(20)
+			H.fire_act(1,5)
 		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 			to_chat(H, span_userdanger("I can't pick up the silver, it is my BANE!"))
 			H.Knockdown(20)
@@ -339,6 +358,45 @@
 			H.Knockdown(20)
 			H.Paralyze(20)
 
+/obj/item/clothing/neck/roguetown/psicross/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
+	. = ..()
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(!H.mind)
+			return TRUE
+		if(HAS_TRAIT(H,TRAIT_HOLY_WEAKNESS))
+			to_chat(H, span_userdanger("I can't equip a holy symbol, it is my BANE!"))
+			H.Knockdown(20)
+			H.adjustFireLoss(60)
+			H.Paralyze(20)
+			H.fire_act(1,5)
+
+/obj/item/clothing/neck/roguetown/psicross/silver/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
+	if(iscarbon(hit_atom))
+		check_silver_dmg(hit_atom)
+	..()
+
+/obj/item/clothing/neck/roguetown/psicross/silver/proc/check_silver_dmg(mob/living/hit_atom)
+	var/mob/living/carbon/human/H = hit_atom
+	if(HAS_TRAIT(H,TRAIT_SILVER_WEAKNESS))
+		H.visible_message("<font color='white'>The silver weakens them!</font>")
+		to_chat(H, span_userdanger("I'm hit by my BANE!"))
+		H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+		H.fire_act(1,5)
+
+/obj/item/clothing/neck/roguetown/psicross/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
+	if(iscarbon(hit_atom))
+		check_holy_dmg(hit_atom)
+	..()
+
+/obj/item/clothing/neck/roguetown/psicross/proc/check_holy_dmg(mob/living/hit_atom)
+	var/mob/living/carbon/human/H = hit_atom
+	if(HAS_TRAIT(H,TRAIT_HOLY_WEAKNESS))
+		H.visible_message("<font color='white'>The holy symbol weakens them!</font>")
+		to_chat(H, span_userdanger("I'm hit by my BANE!"))
+		H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+		H.fire_act(1,5)
+
 /obj/item/clothing/neck/roguetown/psicross/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
 	. = ..()
 	if(ishuman(M))
@@ -347,6 +405,12 @@
 			return TRUE
 		var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
 		var/datum/antagonist/werewolf/W = H.mind.has_antag_datum(/datum/antagonist/werewolf/)
+		if(HAS_TRAIT(H,TRAIT_SILVER_WEAKNESS))
+			to_chat(H, span_userdanger("I can't equip the silver, it is my BANE!"))
+			H.Knockdown(20)
+			H.adjustFireLoss(60)
+			H.Paralyze(20)
+			H.fire_act(1,5)
 		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 			to_chat(H, span_userdanger("I can't equip the silver, it is my BANE!"))
 			H.Knockdown(20)

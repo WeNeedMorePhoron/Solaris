@@ -25,7 +25,7 @@
 	round_contrib_points = 3
 
 	//No nobility for you, being a member of the clergy means you gave UP your nobility. It says this in many of the church tutorial texts.
-	virtue_restrictions = list(/datum/virtue/utility/noble, /datum/virtue/utility/outlander) //Local priests probably shouldn't be from Not Here, though monks and the like make sense.
+	virtue_restrictions = list(/datum/virtue/utility/noble, /datum/virtue/utility/outlander, /datum/virtue/sucker/lesser_bloodsucker) //Local priests probably shouldn't be from Not Here, though monks and the like make sense.
 
 /datum/job/roguetown/priest/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()

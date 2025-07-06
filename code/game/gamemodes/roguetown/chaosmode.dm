@@ -452,6 +452,10 @@
 		chosen_antag = "bandits"
 		pick_bandits()
 		log_game("Antagonists: Roguelite Mode - Bandits")
+	else if(prob(50))
+		chosen_antag = "bloodsuckers"
+		pick_bloodsucker()
+		log_game("Antagonists: Roguelite Mode - Bloodsuckers")
 	else
 		chosen_antag = "werewolves"
 		pick_werewolves()
@@ -483,6 +487,7 @@
 		
 		// Clear any bandits that might have been selected previously
 		pre_bandits.Cut()
+		pre_bloodsuckers.Cut()
 
 	else if(chosen_antag == "bandits")
 		// Process bandits only
@@ -494,6 +499,19 @@
 			SSrole_class_handler.bandits_in_round = TRUE
 		
 		// Clear any werewolves that might have been selected previously
+		pre_werewolves.Cut()
+		pre_bloodsuckers.Cut()
+	
+	else if(chosen_antag == "bloodsuckers")
+		// Process bloodwuckers only
+		for(var/datum/mind/bloodsucker_mind in pre_bloodsuckers)
+			var/datum/antagonist/new_antag = new /datum/antagonist/bloodsucker()
+			bloodsucker_mind.add_antag_datum(new_antag)
+			bloodsuckers += bloodsucker_mind
+			GLOB.pre_setup_antags -= bloodsucker_mind
+		
+		// Clear any bandits and werewolves that might have been selected previously
+		pre_bandits.Cut()
 		pre_werewolves.Cut()
 
 	..()
@@ -554,5 +572,8 @@
 
 	// Select werewolves
 	pick_werewolves()
+
+	//select Bloodsuckers
+	pick_bloodsucker()
 
 	return TRUE

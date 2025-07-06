@@ -465,3 +465,4 @@
 	swim_skill = TRUE
 	wash_in = TRUE
 	water_reagent = /datum/reagent/water
+

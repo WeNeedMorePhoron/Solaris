@@ -206,6 +206,8 @@
 
 	if(isliving(AM))
 		var/mob/living/L = AM
+		if(L.is_flying())
+			return
 		if(L.m_intent == MOVE_INTENT_SNEAK)
 			return
 		else

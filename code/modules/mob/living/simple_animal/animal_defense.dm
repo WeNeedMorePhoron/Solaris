@@ -167,6 +167,37 @@
 			to_chat(src, span_warning("I feed on succulent flesh. I feel reinvigorated."))
 			user.reagents.add_reagent(/datum/reagent/medicine/healthpot, 30)
 			gib()
+		if(HAS_TRAIT(user, TRAIT_VAMPIRISM) && !HAS_TRAIT(user, TRAIT_NOVEGAN))
+			var/mob/living/carbon/human/bsdrinker = user
+			var/mob/living/bsvictim = src
+			var/drinktime = 10 SECONDS
+			var/vitaedrain = 400 //a flat 500 for now, If we get a size trait later, I'd like to use that
+			var/drinkexp = 10
+			if(HAS_TRAIT(user, TRAIT_EFFICIENT_DRINKER)) //halve the time and 1.5 the volume for the trait, this might never occur depending on balance
+				drinktime = 5 SECONDS
+				vitaedrain = 600
+				drinkexp = 14
+			var/bloodleft = bsvictim.blood_volume
+
+			if(bsvictim in range(1, bsdrinker))
+				if (bloodleft < 100)
+					visible_message(span_danger("[bsdrinker] bites the [bsvictim]!"))
+					to_chat(bsdrinker, span_warning("There's not enough blood left for me"))
+				else
+					visible_message(span_danger("[bsdrinker] bites the [bsvictim]!"))
+					to_chat(bsdrinker, span_warning("I start to drain [bsvictim] blood"))
+					if(do_after(bsdrinker, drinktime, target = bsvictim))
+						to_chat(bsdrinker, span_warning("I have sated some of my thirst"))
+						bsdrinker.vitae += vitaedrain //we give them some vitae depending their traits
+						bsvictim.blood_volume = 0 //we set the animal's blood low so we don't have continued bites
+						bsdrinker.mind.add_sleep_experience(/datum/skill/magic/vampirism, drinkexp)
+						bsdrinker.mind.add_sleep_experience(/datum/skill/magic/blood, 0.50*drinkexp)
+					else
+						to_chat(bsdrinker, span_warning("I need them still to drink")) //we moved away or they did
+		else 
+			visible_message(span_danger("[user] bites the [src]!"))
+			if(HAS_TRAIT(user, TRAIT_NOVEGAN))
+				to_chat(user, span_warning("animal blood is not enough for me"))
 		return
 	if(src.apply_damage(damage, BRUTE))
 		if(istype(user, /mob/living/carbon/human/species/werewolf))

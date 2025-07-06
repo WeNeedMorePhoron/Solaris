@@ -21,7 +21,7 @@
 	min_pq = 1 //Introductory guard role, but still requires knowledge of escalation.
 	max_pq = null
 	round_contrib_points = 2
-
+	virtue_restrictions = list(/datum/virtue/sucker/lesser_bloodsucker)
 	cmode_music = 'sound/music/combat_guard.ogg'
 
 /datum/job/roguetown/guardsman/after_spawn(mob/living/L, mob/M, latejoin = TRUE)

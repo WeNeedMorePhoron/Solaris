@@ -20,6 +20,7 @@
 	min_pq = 8
 	max_pq = null
 	round_contrib_points = 2
+	virtue_restrictions = list(/datum/virtue/sucker/lesser_bloodsucker)
 
 	cmode_music = 'sound/music/combat_knight.ogg'
 

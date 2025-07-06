@@ -58,6 +58,12 @@
 	var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
 	var/datum/antagonist/werewolf/W = H.mind.has_antag_datum(/datum/antagonist/werewolf/)
 	if(ishuman(H))
+		if(HAS_TRAIT(H,TRAIT_SILVER_WEAKNESS))
+			to_chat(H, span_userdanger("I can't pick up the silver, it is my BANE!"))
+			H.Knockdown(10)
+			H.Paralyze(10)
+			H.adjustFireLoss(25)
+			H.fire_act(1,10)
 		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
 			to_chat(H, span_userdanger("I can't pick up the silver, it is my BANE!"))
 			H.Knockdown(10)
@@ -93,6 +99,19 @@
 		M.fire_act(1,10)
 		to_chat(M, span_userdanger("I can't pick up the silver, it is my BANE!"))
 		return FALSE
+
+/obj/item/reagent_containers/glass/cup/silver/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
+	if(iscarbon(hit_atom))
+		check_dmg(hit_atom)
+	..()
+
+/obj/item/reagent_containers/glass/cup/silver/proc/check_dmg(mob/living/hit_atom)
+	var/mob/living/carbon/human/H = hit_atom
+	if(HAS_TRAIT(H,TRAIT_SILVER_WEAKNESS))
+		H.visible_message("<font color='white'>The silver weakens them!</font>")
+		to_chat(H, span_userdanger("I'm hit by my BANE!"))
+		H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+		H.fire_act(1,5)
 
 /obj/item/reagent_containers/glass/cup/golden
 	name = "golden goblet"

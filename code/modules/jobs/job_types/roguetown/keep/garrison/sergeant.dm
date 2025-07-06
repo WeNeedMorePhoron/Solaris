@@ -21,8 +21,7 @@
 	min_pq = 6
 	max_pq = null
 	cmode_music = 'sound/music/combat_guard2.ogg'
-
-	virtue_restrictions = list(/datum/virtue/utility/outlander)//Command roles probably shouldn't be from Not Here
+	virtue_restrictions = list(/datum/virtue/utility/outlander, /datum/virtue/sucker/lesser_bloodsucker)//Command roles probably shouldn't be from Not Here
 
 
 /datum/job/roguetown/sergeant/after_spawn(mob/living/L, mob/M, latejoin = TRUE)

@@ -21,7 +21,7 @@
 	min_pq = 3
 	max_pq = null
 	round_contrib_points = 2
-
+	virtue_restrictions = list(/datum/virtue/sucker/lesser_bloodsucker)
 	cmode_music = 'sound/music/combat_guard2.ogg'
 
 /datum/job/roguetown/manorguard/after_spawn(mob/living/L, mob/M, latejoin = TRUE)

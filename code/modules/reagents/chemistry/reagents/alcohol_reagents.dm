@@ -2187,3 +2187,16 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/beer/moonshine/on_mob_end_metabolize(mob/living/M)
 	M.remove_status_effect(/datum/status_effect/buff/moonshine)
+
+/datum/reagent/consumable/ethanol/beer/bloodwyne
+	name = "Blood Wyne"
+	boozepwr = 1 
+	taste_description = "Sweet and Coppery"
+	color = "#731008" // rgb: 115, 16, 8
+	quality = DRINK_NICE
+
+/datum/reagent/consumable/ethanol/beer/bloodwyne/on_mob_life(mob/living/carbon/M)
+	if(	isliving(M) && ishuman(M) && HAS_TRAIT(M,TRAIT_VAMPIRISM) && !HAS_TRAIT(M,TRAIT_NOVEGAN))
+		var/mob/living/carbon/human/C = M
+		C.vitae += 10
+	..()

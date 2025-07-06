@@ -10,7 +10,11 @@
 
 /datum/skill/magic/blood
 	name = "Blood Sorcery"
-	desc = "Currently does not affect anything."
+	desc = "affects blood spells cast times."
+
+/datum/skill/magic/vampirism
+	name = "Vampirism"
+	desc = "affects certain buffs/debuffs to bloodsucker vampires"
 
 /datum/skill/magic/arcane
 	name = "Arcane Magic"

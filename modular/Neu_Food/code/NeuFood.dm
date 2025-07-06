@@ -350,9 +350,20 @@
 	sellprice = 0
 
 /obj/item/reagent_containers/powder/salt/throw_impact(atom/hit_atom, datum/thrownthing/thrownthing)
-	new /obj/effect/decal/cleanable/food/flour(get_turf(src))
 	..()
+	new /obj/effect/decal/cleanable/food/flour(get_turf(src))
+	if(iscarbon(hit_atom))
+		check_dmg(hit_atom)
 	qdel(src)
+
+/obj/item/reagent_containers/powder/salt/proc/check_dmg(mob/living/hit_atom)
+	var/mob/living/carbon/human/H = hit_atom
+	if(HAS_TRAIT(H,TRAIT_HALOPHOBIA))
+		H.visible_message("<font color='white'>The salt weakens them!</font>")
+		to_chat(H, span_userdanger("I'm hit by my BANE!"))
+		H.apply_status_effect(/datum/status_effect/debuff/salt_curse)
+		H.fire_act(1,5)
+	return
 
 /* -------------- RICE ----------------- */
 /obj/item/reagent_containers/food/snacks/grown/rice

@@ -894,8 +894,230 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 ////////
 //LIFE//
 ////////
+/mob/living/carbon/human/proc/bloodsucker_disguise(mob/living/carbon/human/H)
+	//H.disguised = TRUE
+	//var/mob/living/carbon/human/H
+	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
+	if (HAS_TRAIT(H,TRAIT_NO_VEIL)) 
+		to_chat(H, "<span class='warning'>My veil fails!</span>")
+		apply_status_effect(/datum/status_effect/buff/veil_down)
+		remove_status_effect(/datum/status_effect/debuff/veil_up)	
+		return
+	apply_status_effect(/datum/status_effect/debuff/veil_up)
+	remove_status_effect(/datum/status_effect/buff/veil_down)
+	//set the colors back
+	H.skin_tone = H.cache_skin
+	H.hair_color = H.cache_hair
+	H.facial_hair_color = H.cache_hair
+	//going to try and update these eyes the hard way
+	eyes.Remove(H)
+	eyes.eye_color = H.cache_eyes
+	eyes.Insert(H, TRUE, FALSE)
+	H.eye_color = H.cache_eyes
+	H.dna.features["eye_color"] = H.cache_eyes
+	H.dna.update_ui_block(DNA_EYE_COLOR_BLOCK)
+	//run the updates
+	H.update_hair()
+	H.update_body_parts()
+	H.update_body()
+
+//a function to remove our disguise
+/mob/living/carbon/human/proc/bloodsucker_undisguise(mob/living/carbon/human/H)
+	var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
+	apply_status_effect(/datum/status_effect/buff/veil_down)
+	remove_status_effect(/datum/status_effect/debuff/veil_up)
+	//we set the new tones
+	H.skin_tone = H.bs_skin
+	H.hair_color = H.bs_hair
+	H.facial_hair_color = H.bs_hair
+	//going to try and update these eyes the hard way
+	eyes.Remove(H)
+	eyes.eye_color = H.bs_eyes
+	eyes.Insert(H, TRUE, FALSE)
+	H.eye_color = H.bs_eyes
+	H.dna.features["eye_color"] = H.bs_eyes
+	H.dna.update_ui_block(DNA_EYE_COLOR_BLOCK)
+	//now we redraw
+	H.update_hair()
+	H.update_body_parts()
+	H.update_body()
 
 /datum/species/proc/handle_digestion(mob/living/carbon/human/H)
+	var/turf/T = H.loc
+	if (H.stat != DEAD)
+		if(world.time % 5)
+			if (HAS_TRAIT(H, TRAIT_VAMPIRISM))//are they a vampire?
+				//if(GLOB.tod == "dawn") //I would like to give a warning, but this got spammy, maybe someone else has an idea how to get this to notify users?
+				//	if(T.can_see_sky())
+				//		to_chat(H, "<span class='warning'>Day approaches! I need to raise my veil or get to cover!</span>")
+				if(H.has_status_effect(/datum/status_effect/buff/veil_down))//is their veil down
+					if(GLOB.tod == "day") //its day time
+						if(isturf(H.loc))
+							if(T.can_see_sky()) //can we see the sky
+								if(!HAS_TRAIT(H,TRAIT_SUN_RESIST)) //do they have the sun reist trait?
+									if(!H.has_status_effect(/datum/status_effect/debuff/sun_curse))
+										if(HAS_TRAIT(H,TRAIT_SUN_WEAKNESS)) //they burn more if they have sun weakness
+											to_chat(H, "<span class='warning'>The Sun, it BURNS! I need to get cover!</span>")
+											H.fire_act(1,5)
+											H.apply_status_effect(/datum/status_effect/debuff/sun_curse)
+											H.vitae -= 50
+										else
+											to_chat(H, "<span class='warning'>The Sun makes me weak! I need to get cover!</span>")
+											H.apply_status_effect(/datum/status_effect/debuff/sun_curse)
+											H.freak_out()
+											H.vitae -= 10
+			if(HAS_TRAIT(H,TRAIT_HOLY_WEAKNESS)) //check if someone has Holy weakness
+				if(isholyarea(T.loc))
+					if(!H.has_status_effect(/datum/status_effect/debuff/holy_curse))
+						H.apply_status_effect(/datum/status_effect/debuff/holy_curse)
+						if (HAS_TRAIT(H, TRAIT_VAMPIRISM)&& H.has_status_effect(/datum/status_effect/debuff/veil_up))
+							to_chat(H, "<span class='warning'>This place strips me of my veil!</span>")
+							H.bloodsucker_undisguise(H)
+							H.freak_out()
+			if((HAS_TRAIT(H,TRAIT_HALOPHOBIA))) //check if someone has salt phobia
+				var/turf/open/floor/stepTurf = get_step(T.loc, H.dir)
+				if(stepTurf)
+					for(var/obj/effect/decal/cleanable/food/flour/S in stepTurf)
+						to_chat(H, "<span class='warning'>[S] bars your passage!</span>")
+						if(!H.has_status_effect(/datum/status_effect/debuff/salt_curse))
+							H.apply_status_effect(/datum/status_effect/debuff/salt_curse)
+							if (HAS_TRAIT(H, TRAIT_VAMPIRISM) && H.has_status_effect(/datum/status_effect/debuff/veil_up))
+								to_chat(H, "<span class='warning'>This salt strips me of my veil!1</span>")
+								H.bloodsucker_undisguise(H)
+								H.freak_out()
+						return
+				if (istype(T.loc, /obj/effect/decal/cleanable/food/flour/))
+					if(!H.has_status_effect(/datum/status_effect/debuff/salt_curse))
+						H.apply_status_effect(/datum/status_effect/debuff/salt_curse)
+						if (HAS_TRAIT(H, TRAIT_VAMPIRISM) && H.has_status_effect(/datum/status_effect/debuff/veil_up))
+							to_chat(H, "<span class='warning'>This salt strips me of my veil!2</span>")
+							H.bloodsucker_undisguise(H)
+							H.freak_out()
+			if((HAS_TRAIT(H,TRAIT_MEGALOPHOBIA))) //check if someone has a fear of town
+				if(isintown(T.loc))
+					if(!H.has_status_effect(/datum/status_effect/debuff/town_fear))
+						H.apply_status_effect(/datum/status_effect/debuff/town_fear)
+			if((HAS_TRAIT(H,TRAIT_KOINONIPHOBIA)))//check if someone needs to stay outdoors
+				if(!T.can_see_sky())
+					if(!H.has_status_effect(/datum/status_effect/debuff/indoor_fear))
+						H.apply_status_effect(/datum/status_effect/debuff/indoor_fear)
+			if(H.has_status_effect(/datum/status_effect/buff/vampire_float))
+				H.float()
+				
+
+
+		//See if this is a vampire, and we consume vitae instead of food
+		if(HAS_TRAIT(H, TRAIT_VAMPIRISM))
+			var/vampskill = 0
+			var/vitaedrainpertick
+			var/healing_on_tick = 1
+			var/list/wCount = H.get_wounds()
+			//a function to disguise
+			if(H.mind?.get_skill_level(/datum/skill/magic/vampirism) > 0)
+				vampskill = H.mind.get_skill_level(/datum/skill/magic/vampirism)
+
+			if(H.stat == DEAD)
+				return
+			if(H.advsetup)
+				return
+
+			if(H.on_fire)
+				if(H.has_status_effect(/datum/status_effect/debuff/veil_up))
+					H.bloodsucker_undisguise(H)
+				H.freak_out()
+
+			if(istype(T, /obj/structure/closet/crate/coffin) || istype(T, /obj/structure/closet/crate/coffin/vampire))
+				//healing if in a coffin, simular to a bed. we heal regardless of vitae levels
+				if(H.blood_volume < BLOOD_VOLUME_NORMAL)
+					H.blood_volume = min(H.blood_volume+10, BLOOD_VOLUME_NORMAL)
+				if(wCount.len > 0)
+					H.heal_wounds(healing_on_tick)
+					H.update_damage_overlays()
+				H.adjustBruteLoss(-healing_on_tick, 0)
+				H.adjustFireLoss(-healing_on_tick, 0)
+				H.adjustOxyLoss(-healing_on_tick, 0)
+				H.adjustToxLoss(-healing_on_tick, 0)
+				H.adjustOrganLoss(ORGAN_SLOT_BRAIN, -healing_on_tick)
+				H.adjustCloneLoss(-healing_on_tick, 0)
+
+			//we'll set higher blood levels per level
+			if(vampskill < 2)
+				H.vitae = CLAMP(H.vitae, 0, 1666)
+			if(vampskill == 3)
+				H.vitae = CLAMP(H.vitae, 0, 2000)
+			if(vampskill == 4)
+				H.vitae = CLAMP(H.vitae, 0, 2500)
+			if(vampskill == 5)
+				H.vitae = CLAMP(H.vitae, 0, 3000)
+			if(vampskill == 6)
+				H.vitae = CLAMP(H.vitae, 0, 3500)
+
+			//this drops the disguise if you run out of blood or dusts someone
+			if(world.time % 5)
+				if(H.vitae > 0)
+					switch(H.vitae) //how thirsty we are based on blood
+						//if(HYDRATION_LEVEL_WATERLOGGED to INFINITY)
+							//H.apply_status_effect(/datum/status_effect/debuff/waterlogged)
+						if(500 to INFINITY)
+							H.add_stress(/datum/stressevent/hydrated)
+						if(300 to 400)
+							H.remove_stress_list(list(/datum/stressevent/drym,/datum/stressevent/thirst,/datum/stressevent/parched))
+						if(200 to 300)
+							H.add_stress(/datum/stressevent/drym)
+							H.remove_stress_list(list(/datum/stressevent/parched,/datum/stressevent/thirst))
+							H.apply_status_effect(/datum/status_effect/debuff/thirstyt1)
+						if(100 to 200)
+							H.add_stress(/datum/stressevent/thirst)
+							H.remove_stress_list(list(/datum/stressevent/parched,/datum/stressevent/drym))
+							H.apply_status_effect(/datum/status_effect/debuff/thirstyt2)
+						if(0 to 100)
+							H.add_stress(/datum/stressevent/parched)
+							H.remove_stress_list(list(/datum/stressevent/thirst,/datum/stressevent/drym))
+							H.apply_status_effect(/datum/status_effect/debuff/thirstyt3)
+							if(H.has_status_effect(/datum/status_effect/debuff/veil_up))
+								to_chat(H, "<span class='warning'>My veil fails!</span>")
+								H.bloodsucker_undisguise(H)
+
+					//this controls the vitae tick rate!
+					if(istype(T, /obj/structure/closet/crate/coffin) || istype(T, /obj/structure/closet/crate/coffin/vampire))
+						vitaedrainpertick = 0 //no vitae drain while in a coffin
+					else if(H.has_status_effect(/datum/status_effect/buff/veil_down) && HAS_TRAIT(H,TRAIT_HIGH_METABOLISM))
+						vitaedrainpertick = 1 //high vitae drain rate		
+					else if(H.has_status_effect(/datum/status_effect/buff/veil_down) && HAS_TRAIT(H,TRAIT_LOW_METABOLISM))
+						vitaedrainpertick -= 1/4//low vitae drain rate		
+					else if(H.has_status_effect(/datum/status_effect/debuff/veil_up))
+						vitaedrainpertick = 1/4 //low vitae drain rate
+					else if(H.has_status_effect(/datum/status_effect/debuff/veil_up) && HAS_TRAIT(H,TRAIT_LOW_METABOLISM))
+						vitaedrainpertick = 0 //We're going for no vitae drain on HRP
+					else
+						vitaedrainpertick = 1/2 //normal Vitae drain rate
+						
+					H.vitae -= vitaedrainpertick
+					//healing stuff
+					//Low level passive heal while your veil is down
+					if(H.has_status_effect(/datum/status_effect/buff/veil_down) && HAS_TRAIT(H,TRAIT_BLOOD_REGEN))	
+						if(H.blood_volume < BLOOD_VOLUME_NORMAL)
+							H.blood_volume = min(H.blood_volume+10, BLOOD_VOLUME_NORMAL)
+						if(wCount.len > 0)
+							H.heal_wounds(healing_on_tick/4)
+							H.update_damage_overlays()
+						H.adjustBruteLoss(0.25*-healing_on_tick, 0)
+						H.adjustFireLoss(0.25*-healing_on_tick, 0)
+						H.adjustOxyLoss(0.25*-healing_on_tick, 0)
+						H.adjustToxLoss(0.25*-healing_on_tick, 0)
+						H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.25*-healing_on_tick)
+						H.adjustCloneLoss(0.25*-healing_on_tick, 0)
+
+				else if (H.has_status_effect(/datum/status_effect/debuff/veil_up))
+					to_chat(H, "<span class='userdanger'>I RAN OUT OF VITAE!</span>")
+					to_chat(H, "<span class='warning'>My veil fails!</span>")
+					H.bloodsucker_undisguise(H)
+					//comment out the dusting code, maybe we can make them pass out? how do we ghost em instead?
+					//var/obj/shapeshift_holder/SS = locate() in H
+					//if(SS)
+					//	SS.shape.dust()
+					//H.dust()
+					return
 	if(HAS_TRAIT(H, TRAIT_NOHUNGER))
 		return //hunger is for BABIES
 

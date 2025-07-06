@@ -39,9 +39,19 @@
 		SSdroning.kill_rain(client)
 
 	if(mind)
+		//secondlife trait copies the lich spell and consumes the perk. need to check if we have a valid location for the coffin, commenting out for now
+
+		var/mob/living/carbon/human/H = src
+		if(HAS_TRAIT(H,TRAIT_VAMPIRISM))
+			if(HAS_TRAIT(H,TRAIT_SECONDLIFE) && !gibbed)
+				var/respawn_time = 5 SECONDS
+				var/datum/mind/BSmind = mind
+				addtimer(CALLBACK(src, PROC_REF(secondliferespawn), BSmind), respawn_time, TIMER_UNIQUE)
+				REMOVE_TRAIT(H,TRAIT_SECONDLIFE,TRAIT_GENERIC)
+
 		if(!gibbed)
 			var/datum/antagonist/vampirelord/VD = mind.has_antag_datum(/datum/antagonist/vampirelord)
-			if(VD)
+			if(VD|| HAS_TRAIT(H,TRAIT_PERMADUST))
 				dust(just_ash=TRUE,drop_items=TRUE)
 				return
 
@@ -154,3 +164,26 @@
 				CA.adjust_triumphs(-1)
 			CA.add_stress(/datum/stressevent/viewgib)
 	return ..()
+
+/mob/living/carbon/human/proc/secondliferespawn(datum/mind/mind)
+	var/mob_type = /mob/living/carbon/human
+	var/turf/T = get_turf(src)
+	var/mob/living/body
+	if(mind.current)
+		if(mind.current.stat != DEAD)
+			return
+		else
+			body = mind.current
+	if(!body)
+		body = new mob_type(T)
+		var/mob/ghostie = mind.get_ghost(TRUE)
+		if(ghostie.client && ghostie.client.prefs)
+			ghostie.client.prefs.copy_to(body)
+		mind.transfer_to(body)
+	else
+		body.forceMove(pick(GLOB.secondlife_respawns))
+		body.revive(full_heal = TRUE, admin_revive = TRUE)
+	mind.grab_ghost(TRUE)
+	body.flash_act()
+
+	playsound(T, 'sound/magic/antimagic.ogg', 50, TRUE)

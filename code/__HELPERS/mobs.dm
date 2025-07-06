@@ -71,6 +71,17 @@ GLOBAL_LIST_INIT(skin_tones, sortList(list(
 	"skin3" = "e8b59b"
 	)))
 
+GLOBAL_LIST_INIT(vamp_skin_tones, sortList(list(
+	"Pale" = "#c9d3de",
+	"Greyferatu" = "#7C8A97",
+	"Jiangshi" = "#97C9EA",
+	"Shadowed" = "#2B2B3C",
+	//"c9d3de",
+	//"7C8A97",
+	//"97C9EA",
+	//"2B2B3C",
+	)))
+
 /proc/random_skin_tone()
 	return GLOB.skin_tones[pick(GLOB.skin_tones)]
 

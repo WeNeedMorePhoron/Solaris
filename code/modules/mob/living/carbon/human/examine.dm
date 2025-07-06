@@ -93,6 +93,19 @@
 
 		if (HAS_TRAIT(src, TRAIT_OUTLANDER) && !HAS_TRAIT(user, TRAIT_OUTLANDER)) 
 			. += span_phobia("A foreigner...")
+		
+		if(HAS_TRAIT(user, TRAIT_VAMPIRISM))
+			if(HAS_TRAIT(src, TRAIT_VAMPIRISM))
+				. += span_notice("A fellow Vampire.")
+			else
+				if(HAS_TRAIT(src, TRAIT_BLOOD_THRALL))
+					. += span_notice("A Thrall, a peon.")
+		if(HAS_TRAIT(user, TRAIT_BLOOD_THRALL))
+			if(HAS_TRAIT(src, TRAIT_BLOOD_THRALL))
+				. += span_notice("A fellow Thrall.")
+			else
+				if(HAS_TRAIT(src, TRAIT_VAMPIRISM))
+					. += span_notice("A Vampire, our masters.")
 
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
@@ -161,6 +174,9 @@
 					. += span_redtext("[m1] repugnant!")
 				if (THEY_THEM, THEY_THEM_F, IT_ITS)
 					. += span_redtext("[m1] repulsive!")
+		if(HAS_TRAIT(src, TRAIT_VAMPIRISM))
+			if(has_status_effect(/datum/status_effect/buff/veil_down))
+				. += span_redtext("[m1] has long fangs, hungry eyes, and an odd color to their skin!")		
 
 	var/is_stupid = FALSE
 	var/is_smart = FALSE
@@ -183,7 +199,7 @@
 					var/shit = bD.examine_friendorfoe(aD,user,src)
 					if(shit)
 						. += shit
-			if(user.mind.has_antag_datum(/datum/antagonist/vampirelord) || user.mind.has_antag_datum(/datum/antagonist/vampire))
+			if(user.mind.has_antag_datum(/datum/antagonist/vampirelord) || user.mind.has_antag_datum(/datum/antagonist/vampire) || (HAS_TRAIT(user, TRAIT_VAMPIRISM)))
 				. += span_userdanger("Blood Volume: [blood_volume]")
 
 	var/list/obscured = check_obscured_slots()

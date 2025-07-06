@@ -104,6 +104,8 @@
 			prob2break = 0
 		if(L.m_intent == MOVE_INTENT_RUN)
 			prob2break = 100
+		if (L.is_flying())
+			prob2break = 0
 		if(prob(prob2break))
 			if(!(HAS_TRAIT(L, TRAIT_SUNMARCHNATIVE) || HAS_TRAIT(L, TRAIT_WOODWALKER) && L.m_intent != MOVE_INTENT_RUN))
 				playsound(src,'sound/items/seedextract.ogg', 100, FALSE)

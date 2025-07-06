@@ -124,6 +124,10 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/elfblue = 48)
 	desc = "A bottle gilded with a golden cork-seal. This is the legendary Valmora Blue from the Vineyard of Valmora, headed by a sainted Dark-Elf swordsmaster. This bottle would swoon Gods over!"
 
+/obj/item/reagent_containers/glass/bottle/rogue/bloodwyne
+	list_reagents = list(/datum/reagent/consumable/ethanol/beer/bloodwyne = 48)
+	desc = "A bottle of red liquid much thicker than water"
+
 //AZURE DRINKS
 /obj/item/reagent_containers/glass/bottle/rogue/beer/jagdtrunk
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer/jagdtrunk = 48)

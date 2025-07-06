@@ -384,6 +384,17 @@
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 1
 
+/datum/crafting_recipe/roguetown/structure/coffin/vampire
+	name = "sleep casket"
+	result = /obj/structure/closet/crate/coffin/vampire
+	reqs = list(/obj/item/grown/log/tree/small = 2,
+				/obj/item/natural/silk = 2)
+	verbage_simple = "construct"
+	verbage = "constructs"
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 1
+
+
 /obj/structure/closet/crate/roguecloset/crafted
 	sellprice = 6
 

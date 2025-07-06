@@ -519,6 +519,9 @@
 		stat("SPD: \Roman [STASPD]")
 		stat("FOR: \Roman [STALUC]")
 		stat("PATRON: [patron]")
+		var/mob/living/carbon/human/H = src
+		if(HAS_TRAIT(H, TRAIT_VAMPIRISM))
+			stat("Vitae: [H.vitae]")
 
 /mob/living/carbon/Stat()
 	..()

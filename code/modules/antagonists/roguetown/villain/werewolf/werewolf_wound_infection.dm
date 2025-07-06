@@ -12,6 +12,8 @@
 	if(werewolf_infection_timer || !ishuman(owner) || !prob(werewolf_infection_probability))
 		return
 	var/mob/living/carbon/human/human_owner = owner
+	if(HAS_TRAIT(human_owner,TRAIT_VAMPIRISM))
+		return
 	if(!human_owner.can_werewolf())
 		return
 	if(human_owner.stat >= DEAD) //forget it

@@ -57,6 +57,8 @@
 	var/datum/antagonist/werewolf/lesser/Wereless = M.mind.has_antag_datum(/datum/antagonist/werewolf/lesser/)
 	var/datum/antagonist/vampirelord/Vamp = M.mind.has_antag_datum(/datum/antagonist/vampirelord/)
 	var/datum/antagonist/vampirelord/lesser/Vampless = M.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
+	var/datum/antagonist/bloodsucker/Suck = M.mind.has_antag_datum(/datum/antagonist/bloodsucker/)
+	var/datum/antagonist/bloodsucker/lesser/Suckless = M.mind.has_antag_datum(/datum/antagonist/bloodsucker/lesser)
 
 	user.visible_message(span_notice("[user] begins to anoint [M] with [src]."))
 	if(do_after(user, 10 SECONDS, target = M))
@@ -123,6 +125,150 @@
 		M.Knockdown(30)
 		return
 	
+	else if(Suck) //bloodsucker and lesser bloodsucker
+		M.mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+		M.skin_tone = M.cache_skin
+		M.hair_color = M.cache_hair
+		M.facial_hair_color = M.cache_hair 
+		M.eye_color = M.cache_eyes
+		M.update_body()
+		M.update_hair()
+		M.update_body_parts(redraw = TRUE)
+		Suck.on_removal()
+		M.mind.special_role = null
+		M.emote("agony", forced = TRUE)
+		to_chat(M, span_userdanger("THE FOUL SILVER! IT QUICKENS MY HEART!"))
+		//removing the starting traits
+		REMOVE_TRAIT(M,TRAIT_STRONGBITE, MAGIC_TRAIT)
+		REMOVE_TRAIT(M,TRAIT_NOHUNGER, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_NOBREATH, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_TOXIMMUNE, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_STEELHEARTED, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_NOSLEEP, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_VAMPMANSION, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_VAMP_DREAMS, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_VAMPIRISM,TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_GRAVEROBBER,TRAIT_GENERIC)
+		//time to remove any perks and weaknesses they got
+		REMOVE_TRAIT(M,TRAIT_VAMPIRISM, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_SUN_RESIST, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_SILVER_RESIST, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_HOLY_RESIST, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_SECONDLIFE, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_BLOOD_REGEN, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_LOW_METABOLISM, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_EFFICIENT_DRINKER, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_NOPAIN, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_SILENTBITE, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_WEAK_VEIL, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_NO_VEIL, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_HYDROPHOBIA, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_HIGH_METABOLISM, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_NOVEGAN, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_SUN_WEAKNESS, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_SILVER_WEAKNESS, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_HOLY_WEAKNESS, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_HALOPHOBIA, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_PERMADUST, TRAIT_GENERIC)
+		//time to remove any spells they got
+		M.mind?.vamp_points = 0
+		M.mind?.used_vamp_points = 0
+		M.mind?.adjust_vamppoints(1)
+		M.mind?.adjust_vamppoints(-1)
+		M.RemoveSpell(/obj/effect/proc_holder/spell/targeted/vampire_transfix)
+		M.RemoveSpell(/obj/effect/proc_holder/spell/self/blood_veil)
+		M.RemoveSpell(/obj/effect/proc_holder/spell/self/learnvampspell)
+		M.remove_status_effect(/datum/status_effect/debuff/veil_up)
+		M.remove_status_effect(/datum/status_effect/buff/veil_down)
+
+		var/list/vamp_choices = list()
+		vamp_choices  += GLOB.learnable_vamp_spells
+
+		for(var/vamp_choice in vamp_choices)
+			M.RemoveSpell(vamp_choice)
+
+		ADD_TRAIT(M, TRAIT_SILVER_BLESSED, TRAIT_GENERIC)
+		M.Stun(30)
+		M.Knockdown(30)
+		M.Jitter(30)
+		return
+
+	else if(Suckless) //bloodsucker and lesser bloodsucker
+		M.mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+		M.skin_tone = M.cache_skin
+		M.hair_color = M.cache_hair
+		M.facial_hair_color = M.cache_hair 
+		M.eye_color = M.cache_eyes
+		M.update_body()
+		M.update_hair()
+		M.update_body_parts(redraw = TRUE)
+		Suckless.on_removal()
+		M.mind.special_role = null
+		M.emote("agony", forced = TRUE)
+		to_chat(M, span_userdanger("THE FOUL SILVER! IT QUICKENS MY HEART!"))
+		//removing the starting traits
+		REMOVE_TRAIT(M,TRAIT_STRONGBITE, "/datum/antagonist/bloodsucker")
+		REMOVE_TRAIT(M,TRAIT_NOHUNGER, "/datum/antagonist/bloodsucker")
+		REMOVE_TRAIT(M,TRAIT_NOBREATH, "/datum/antagonist/bloodsucker")
+		REMOVE_TRAIT(M,TRAIT_TOXIMMUNE, "/datum/antagonist/bloodsucker")
+		REMOVE_TRAIT(M,TRAIT_STEELHEARTED, "/datum/antagonist/bloodsucker")
+		REMOVE_TRAIT(M,TRAIT_NOSLEEP, "/datum/antagonist/bloodsucker")
+		REMOVE_TRAIT(M,TRAIT_VAMPMANSION, "/datum/antagonist/bloodsucker")
+		REMOVE_TRAIT(M,TRAIT_VAMP_DREAMS, "/datum/antagonist/bloodsucker")
+		REMOVE_TRAIT(M,TRAIT_VAMPIRISM,"/datum/antagonist/bloodsucker")
+		//time to remove any perks and weaknesses they got
+		REMOVE_TRAIT(M,TRAIT_VAMPIRISM, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_SUN_RESIST, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_SILVER_RESIST, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_HOLY_RESIST, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_SECONDLIFE, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_BLOOD_REGEN, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_LOW_METABOLISM, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_EFFICIENT_DRINKER, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_NOPAIN, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_SILENTBITE, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_WEAK_VEIL, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_NO_VEIL, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_HYDROPHOBIA, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_HIGH_METABOLISM, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_NOVEGAN, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_SUN_WEAKNESS, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_SILVER_WEAKNESS, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_HOLY_WEAKNESS, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_HALOPHOBIA, TRAIT_GENERIC)
+		REMOVE_TRAIT(M,TRAIT_PERMADUST, TRAIT_GENERIC)
+		//removing vampire ranks
+		M.mind.adjust_skillrank(/datum/skill/magic/vampirism, -6, TRUE)
+		M.mind.adjust_skillrank(/datum/skill/magic/blood, -6, TRUE)
+		//removing any verbs given
+		M.verbs -= /mob/living/carbon/human/proc/disguise_button
+		M.verbs -= /mob/living/carbon/human/proc/vampire_telepathy
+		M.verbs -= /mob/living/carbon/human/proc/vamp_regenerate
+		//time to remove any spells they got
+		M.mind?.vamp_points = 0
+		M.mind?.used_vamp_points = 0
+		M.mind?.adjust_vamppoints(1)
+		M.mind?.adjust_vamppoints(-1)
+		M.RemoveSpell(/obj/effect/proc_holder/spell/targeted/vampire_transfix)
+		M.RemoveSpell(/obj/effect/proc_holder/spell/self/blood_veil)
+		M.RemoveSpell(/obj/effect/proc_holder/spell/self/learnvampspell)
+		M.remove_status_effect(/datum/status_effect/debuff/veil_up)
+		M.remove_status_effect(/datum/status_effect/buff/veil_down)
+
+		var/list/vamp_choices = list()
+		vamp_choices  += GLOB.learnable_vamp_spells
+
+		for(var/vamp_choice in vamp_choices)
+			M.mind?.RemoveSpell(vamp_choice)
+
+		ADD_TRAIT(M, TRAIT_SILVER_BLESSED, TRAIT_GENERIC)
+		M.Stun(30)
+		M.Knockdown(30)
+		M.Jitter(30)
+		return
+
 	else if(Vampless) //Lesser vampires being saved
 		M.mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 		var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)

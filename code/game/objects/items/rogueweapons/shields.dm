@@ -51,7 +51,10 @@
 	var/obj/projectile/P
 	if(attack_type == THROWN_PROJECTILE_ATTACK)
 		var/obj/item/I = hitby
-		attacker = I.thrownby
+		if (ishuman(I) || ismob(I))
+			attacker = I
+		else
+			attacker = I.thrownby
 	if(attack_type == PROJECTILE_ATTACK)
 		P = hitby
 		attacker = P.firer

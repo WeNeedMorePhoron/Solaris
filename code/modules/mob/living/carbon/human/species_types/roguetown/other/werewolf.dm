@@ -16,15 +16,18 @@
 	id = "werewolf"
 	species_traits = list(NO_UNDERWEAR, NO_ORGAN_FEATURES, NO_BODYPART_FEATURES)
 	inherent_traits = list(
+		TRAIT_HOLY_WEAKNESS, //weak to holy areas
+		TRAIT_MEGALOPHOBIA,  //weak to being in town
+		TRAIT_KOINONIPHOBIA, //weak to being under covered areas
 		TRAIT_STRONGBITE,
 		TRAIT_ZJUMP,
 		TRAIT_NOFALLDAMAGE1,
 		TRAIT_NOROGSTAM,
 		TRAIT_BASHDOORS,
-		TRAIT_SHOCKIMMUNE,
+		//TRAIT_SHOCKIMMUNE, //taking this off to make them weak to shock spells again
 		TRAIT_STEELHEARTED,
 		TRAIT_BREADY,
-		TRAIT_TOXIMMUNE,
+		//TRAIT_TOXIMMUNE, //taking this off to make them weak to poison again
 		TRAIT_NASTY_EATER,
 		TRAIT_NOSTINK,
 		TRAIT_CRITICAL_RESISTANCE,

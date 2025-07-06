@@ -435,6 +435,7 @@
 			var/mob/living/carbon/human/s_user = user
 			var/mob/living/carbon/human/H = target
 			var/datum/antagonist/werewolf/W = H.mind.has_antag_datum(/datum/antagonist/werewolf/)
+			var/datum/antagonist/vampire/VA = H.mind.has_antag_datum(/datum/antagonist/vampire/)
 			var/datum/antagonist/vampirelord/lesser/V = H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
 			var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
 			if(V)
@@ -448,6 +449,31 @@
 					to_chat(H, span_userdanger("I'm hit by my BANE!"))
 					H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
 					src.last_used = world.time
+			if(VA)
+				if(VA.disguised)
+					H.visible_message("<font color='white'>The silver weapon weakens the curse temporarily!</font>")
+					to_chat(H, span_userdanger("I'm hit by my BANE!"))
+					H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+					src.last_used = world.time
+				else
+					H.visible_message("<font color='white'>The silver weapon weakens the curse temporarily!</font>")
+					to_chat(H, span_userdanger("I'm hit by my BANE!"))
+					H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+					src.last_used = world.time
+			//here we give our vampire silver weakness, unless they have a perk to reduce its impact. considering giving them default stunned
+			if(HAS_TRAIT(H,TRAIT_VAMPIRISM))
+				if(H.has_status_effect(/datum/status_effect/debuff/veil_up) && !HAS_TRAIT(H,TRAIT_SILVER_RESIST))
+					if(HAS_TRAIT(H,TRAIT_SILVER_WEAKNESS))
+						H.visible_message("<font color='white'>The silver weapon burns the cursed!</font>")
+						to_chat(H, span_userdanger("I'm hit by my BANE, it BURNS!"))
+						H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+						H.fire_act(1,5)
+						src.last_used = world.time
+					else
+						H.visible_message("<font color='white'>The silver weapon weakens the curse temporarily!</font>")
+						to_chat(H, span_userdanger("I'm hit by my BANE!"))
+						H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+						src.last_used = world.time
 			if(V_lord)
 				if(V_lord.vamplevel < 4 && !V)
 					H.visible_message("<font color='white'>The silver weapon weakens the curse temporarily!</font>")

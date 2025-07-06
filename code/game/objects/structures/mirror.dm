@@ -29,6 +29,14 @@
 		return
 
 	var/mob/living/carbon/human/H = user
+
+	if(H.has_status_effect(/datum/status_effect/buff/veil_down))
+		to_chat(H, span_warning("I cannot see myself, but I feel I can adjust my form"))
+		var/datum/antagonist/bloodsucker/BSDrinker = user.mind?.has_antag_datum(/datum/antagonist/bloodsucker)
+		BSDrinker.choose_skin_popup(H)
+		BSDrinker.choose_eye_popup(H)
+		BSDrinker.antag_headshot(H)
+		return
 	
 	if(!HAS_TRAIT(H, TRAIT_MIRROR_MAGIC))
 		to_chat(H, span_warning("You look into the mirror but see only your normal reflection."))

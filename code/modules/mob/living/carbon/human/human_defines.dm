@@ -21,7 +21,7 @@
 	var/last_sound //last emote so we have no doubles
 
 	//Hair colour and style
-	var/hair_color = "000"
+	var/hair_color = "#000000"
 	var/hairstyle = "Bald"
 
 	//Facial hair colour and style
@@ -29,7 +29,7 @@
 	var/facial_hairstyle = "Shaved"
 
 	//Eye colour
-	var/eye_color = "000"
+	var/eye_color = "#000000"
 
 	var/voice_color = "a0a0a0"
 	var/nickname = "Please Change Me"
@@ -129,4 +129,21 @@
 	var/datum/statpack/statpack = null // Lethalstone Port - statpacks for greater customization
 	var/second_voice	// Virtue-specific. Can be swapped to / from and changed.
 	var/original_voice
+	//vitae used mostly for vampires or anything that uses blood magic
+	var/vitae = 1000
+	//we track this for round goals and skill level ups, this number should rise for each vamp
+	var/bs_vitae_total = 0 
+	//setting up vars on round start values
+	var/cache_skin = "#000000"
+	var/cache_eyes = "#000000"
+	var/cache_hair ="#000000"
+	//setting up vars for bloodsucker color values
+	var/bs_skin = "#c9d3de"
+	var/bs_eyes = "#ff0000"
+	var/bs_hair = "#181a1d"
+	//Thrall and spawn count
+	var/bs_thrall = 0
+	var/bs_spawn = 0
+	//An alternative headshot link that can be used when users want to use it for a special role like while a vampire, werewolf, bandit, etc.
+	var/antag_headshot_link
 	var/patronchoice = null //Saves the Warlock's patron if any.

@@ -47,6 +47,8 @@
 
 	var/spell_points
 	var/used_spell_points
+	var/vamp_points //used for leveling vampire skills
+	var/used_vamp_points
 	var/movemovemovetext = "Move!!"
 	var/takeaimtext = "Take aim!!"
 	var/holdtext = "Hold!!"
@@ -337,6 +339,8 @@
 		if(known_skills[S] > old_level)
 			to_chat(current, span_nicegreen("My [S.name] grows to [SSskills.level_names[known_skills[S]]]!"))
 			S.skill_level_effect(src, known_skills[S])
+			if(skill == /datum/skill/magic/vampirism)
+				adjust_vamppoints(2) //adding 2 points per vampire level
 			if (skill == /datum/skill/magic/arcane && get_skill_level(skill) == SKILL_LEVEL_LEGENDARY)
 				if (!HAS_TRAIT(current, TRAIT_MAGIC_TALENT))
 					ADD_TRAIT(current, TRAIT_ARCANE_GATES, TRAIT_GENERIC)
@@ -374,6 +378,8 @@
 /datum/mind/proc/adjust_skillrank(skill, amt, silent = FALSE)
 	var/datum/skill/S = GetSkillRef(skill)
 	var/amt2gain = 0
+	if(skill == /datum/skill/magic/vampirism)
+		adjust_vamppoints(amt*2) //adding 2 points per vampire level
 	for(var/i in 1 to amt)
 		switch(skill_experience[S])
 			if(SKILL_EXP_MASTER to SKILL_EXP_LEGENDARY)
@@ -429,6 +435,11 @@
 /datum/mind/proc/adjust_spellpoints(points)
 	spell_points += points
 	check_learnspell() //check if we need to add or remove the learning spell
+
+// adjusts the amount of available vamp points
+/datum/mind/proc/adjust_vamppoints(points)
+	vamp_points += points
+	check_learnvampspellperk() //check if we need to add or remove the learning spell, not sure this will work right
 
 ///Gets the skill's singleton and returns the result of its get_skill_speed_modifier
 /datum/mind/proc/get_skill_speed_modifier(skill)
@@ -766,6 +777,17 @@
 
 	if((spell_points - used_spell_points) <= 0) //are we out of points?
 		RemoveSpell(/obj/effect/proc_holder/spell/self/learnspell) //bye bye spell
+		return
+	return
+
+/datum/mind/proc/check_learnvampspellperk()
+	if(!has_spell(/obj/effect/proc_holder/spell/self/learnvampspell)) //are we missing the learning spell?
+		if((vamp_points - used_vamp_points) > 0) //do we have points?
+			AddSpell(new /obj/effect/proc_holder/spell/self/learnvampspell(null)) //put it in
+			return
+
+	if((vamp_points - used_vamp_points) <= 0) //are we out of points?
+		RemoveSpell(/obj/effect/proc_holder/spell/self/learnvampspell) //bye bye spell
 		return
 	return
 

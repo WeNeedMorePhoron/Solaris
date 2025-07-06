@@ -20,7 +20,7 @@
 	max_pq = null
 	round_contrib_points = 3
 	cmode_music = 'sound/music/combat_noble.ogg'
-	virtue_restrictions = list(/datum/virtue/utility/outlander)//Command roles probably shouldn't be from Not Here
+	virtue_restrictions = list(/datum/virtue/utility/outlander, /datum/virtue/sucker/lesser_bloodsucker)//Command roles probably shouldn't be from Not Here
 
 /*
 /datum/job/roguetown/hand/special_job_check(mob/dead/new_player/player)

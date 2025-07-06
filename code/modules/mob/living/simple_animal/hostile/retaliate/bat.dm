@@ -100,3 +100,31 @@
 	gender = PLURAL
 	icon_state = "crow1"
 	icon = 'icons/roguetown/mob/monster/crow.dmi'
+
+/mob/living/simple_animal/hostile/retaliate/bat/vampirebat
+	name = "Vampire Bat"
+	desc = "A blood sucking creature"
+	icon_state = "bat"
+	icon_living = "bat"
+	icon_dead = "bat_dead"
+	icon_gib = "bat_dead"
+	speak_emote = list("squeaks")
+	base_intents = list(/datum/intent/unarmed/help)
+	harm_intent_damage = 6
+	melee_damage_lower = 6
+	melee_damage_upper = 5
+	attack_verb_continuous = "bites"
+	attack_verb_simple = "bite"
+	fly_time = 3 SECONDS // slowing down crow for witches
+
+//vampire mistform here
+/mob/living/simple_animal/hostile/retaliate/bat/vampirebat/Initialize()
+	. = ..()
+	set_light(1, 1, 2)
+	ADD_TRAIT(src, TRAIT_DARKVISION, MAGIC_TRAIT)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/simple_animal/hostile/retaliate/vampiregaseousform, revert), "Bat"), 10 SECONDS)
+
+
+/mob/living/simple_animal/hostile/retaliate/bat/vampirebat/proc/revert()
+	REMOVE_TRAIT(src, TRAIT_DARKVISION, MAGIC_TRAIT)
+	qdel()

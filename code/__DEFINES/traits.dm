@@ -139,6 +139,31 @@
 #define TRAIT_ARCANE_T3 "Arcane Training (Expert)"
 #define TRAIT_ARCANE_T4 "Arcane Training (Master)"
 #define TRAIT_WILDMAGIC "Wild Magic" //low chance for random stuff to happen when casting
+#define TRAIT_SUN_RESIST "Sun Resistance"
+#define TRAIT_SILVER_RESIST "Silver Resistance"
+#define TRAIT_HOLY_RESIST "Holy Resistance"
+#define TRAIT_BLOOD_THRALL "Bloodsucker's Thrall"
+#define TRAIT_WEAK_VEIL "Weak Veil"
+#define TRAIT_NO_VEIL "No Veil"
+#define TRAIT_SECONDLIFE "Second Life"
+#define TRAIT_BLOOD_REGEN "Passive Regeneration"
+#define TRAIT_HYDROPHOBIA "water Weakness"
+#define TRAIT_LOW_METABOLISM "Low Metabolism"
+#define TRAIT_HIGH_METABOLISM "High Metabolism"
+#define TRAIT_EFFICIENT_DRINKER "Efficient Drinker"
+#define TRAIT_NOVEGAN "No Vegan"
+#define TRAIT_SUN_WEAKNESS "Sun Weakness"
+#define TRAIT_SILVER_WEAKNESS "Silver Weakness"
+#define TRAIT_HOLY_WEAKNESS "Holy Weakness"
+#define TRAIT_HALOPHOBIA "Salt Weakness"
+#define TRAIT_VAMPIRISM "Vampirism"
+#define TRAIT_SILENTBITE "stealth Bite"
+#define TRAIT_FIRSTBITE "Vampire Bitten"
+#define TRAIT_PERMADUST "Dust on Death"
+#define TRAIT_VAMP_HEAL_LIMIT "Healing Ability Limit"
+#define TRAIT_VAMP_ANCIENT "Ancient Vampire"
+#define TRAIT_KOINONIPHOBIA "Koinoniphobia"
+#define TRAIT_MEGALOPHOBIA "Megalophobia"
 #define TRAIT_WILDMAGIC_BENEFIC "Beneficial Wild Magic"
 #define TRAIT_FIENDKISS "Kiss of the Fiend" //after casting some spells, hurl a firebolt at the same location
 
@@ -263,9 +288,34 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_MAGIC_TALENT = span_notice("I am slowly learning about magic, able only to achieve even the smallest of spells."),
 	TRAIT_ARCANE_GATES = span_info("I have stolen a peek through the arcane gates, my mind expanded with knowledge!"),
 	TRAIT_WILDMAGIC = span_info("My magic sometimes has unexpected consequences."),
+	TRAIT_SUN_RESIST = span_notice("I can resist the sun without my veil."),
+	TRAIT_SILVER_RESIST = span_notice("I can resist silver."),
+	TRAIT_HOLY_RESIST = span_notice("I can resist holy spells and areas."),
+	TRAIT_BLOOD_THRALL = span_notice("I have been made a vampire's thrall."),
+	TRAIT_WEAK_VEIL = span_notice("my veil is weak, I'm weaker while it is up."),
+	TRAIT_NO_VEIL = span_notice("I can no longer hold a veil, all can see me for what I am."),
+	TRAIT_SECONDLIFE = span_notice("I have been granted the boon of a second life and will resurrect if my head stays on my body."),
+	TRAIT_BLOOD_REGEN = span_notice("I have passive regeneration as long as I have vitae."),
+	TRAIT_HYDROPHOBIA = span_notice("I have a weakness to clean or salt water."),
+	TRAIT_LOW_METABOLISM = span_notice("I have a low metabolism and consume less vitae."),
+	TRAIT_HIGH_METABOLISM = span_notice("I have a high metabolism and consume more vitae."),
+	TRAIT_EFFICIENT_DRINKER = span_notice("I drink blood more efficiently."),
+	TRAIT_NOVEGAN = span_notice("I gain nothing drinking blood from animals or bottles."),
+	TRAIT_SUN_WEAKNESS = span_notice("I will burn under the sun if my veil is down."),
+	TRAIT_SILVER_WEAKNESS = span_notice("I take more damage and burn from silver."),
+	TRAIT_HOLY_WEAKNESS = span_notice("I fel weak on holy ground."),
+	TRAIT_HALOPHOBIA = span_notice("I feel weak in salt water and having salt thrown at me."),
+	TRAIT_VAMPIRISM = span_notice("I can drink and wield the power of blood."),
+	TRAIT_SILENTBITE = span_notice("I can bite others without being noticed."),
+	TRAIT_FIRSTBITE = span_notice("I've been bitten by a vampire at least once."),
+	TRAIT_PERMADUST = span_notice("I will turn to dust upon death, I must be careful."),
+	TRAIT_VAMP_HEAL_LIMIT = span_notice("I've learned an ability to helps me heal my body and I can't learn more."),
+	TRAIT_VAMP_ANCIENT = span_notice("I am older than most vampires."),
+	TRAIT_KOINONIPHOBIA = span_notice("I must stay outdoors."),
+	TRAIT_MEGALOPHOBIA = span_notice("I hate big buildings, I should stay out of town."),
 	TRAIT_WILDMAGIC_BENEFIC = span_info("I am inspired when witnessing magic going haywire."),
 	TRAIT_FIENDKISS = span_info("When I cast projectile magic, my patron also hurls a fire bolt at the same location."),
-))
+	))
 
 // trait accessor defines
 #define ADD_TRAIT(target, trait, source) \

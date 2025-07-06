@@ -40,3 +40,18 @@
 	if(istype(C))
 		if(C.vampire_werewolf() == "vampire")
 			return TRUE
+
+//if we choose to bring back vampires verse werewolves
+/datum/objective/bloodsucker
+	name = "survive"
+	explanation_text = "I may live forever, but only if I survive this era"
+	team_explanation_text = "Will vampires return to prominance this era by learning to live along side mortals in Sunmarch? Or will there be another schism that leads to war?"
+	triumph_count = 5
+
+/*
+/datum/objective/bloodsucker/check_completion()
+	var/datum/game_mode/chaosmode/C = SSticker.mode
+	if(istype(C))
+		if(C.bloodsucker_werewolf() == "bloodsucker")
+			return TRUE
+*/

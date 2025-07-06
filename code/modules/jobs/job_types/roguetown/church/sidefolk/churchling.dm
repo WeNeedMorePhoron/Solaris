@@ -22,6 +22,7 @@
 	min_pq = -10
 	max_pq = null
 	round_contrib_points = 2
+	virtue_restrictions = list(/datum/virtue/sucker/lesser_bloodsucker)
 
 /datum/job/roguetown/churchling/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()

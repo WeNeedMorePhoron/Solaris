@@ -42,6 +42,19 @@
 	scatter(get_turf(src))
 	..() 
 
+/obj/item/roguecoin/silver/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	if(iscarbon(hit_atom))
+		check_dmg(hit_atom)
+	..() 
+
+/obj/item/roguecoin/silver/proc/check_dmg(mob/living/hit_atom)
+	var/mob/living/carbon/human/H = hit_atom
+	if(HAS_TRAIT(H,TRAIT_SILVER_WEAKNESS))
+		H.visible_message("<font color='white'>The silver weakens them!</font>")
+		to_chat(H, span_userdanger("I'm hit by my BANE!"))
+		H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+		H.fire_act(1,1)
+
 /obj/item/roguecoin/proc/scatter(turf/T)
 	if(istransparentturf(T))
 		scatter(GET_TURF_BELOW(T))

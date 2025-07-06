@@ -253,7 +253,8 @@
 			end_reason = "When the Vampires finished sucking the town dry, they moved on to the next one."
 		if(C.vampire_werewolf() == "werewolf")
 			end_reason = "The Werevolves formed an unholy clan, marauding Sunmarch until the end of its days."
-
+		/*if(C.bloodsucker_werewolf() == "vampire")
+			end_reason = "When the Vampires finished sucking the town dry, they moved on to the next one."*/
 		if(C.headrebdecree)
 			end_reason = "The peasant rebels took control of the throne, hail the new community!"
 
