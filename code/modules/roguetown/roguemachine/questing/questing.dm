@@ -65,11 +65,20 @@
 		"Hard" = list(deposit = 20, reward_min = 60, reward_max = 100, icon = "scroll_quest_high")
 	)
 
-	var/selection = input(user, "Select quest difficulty", src) as null|anything in difficulty_data
+	// Create a list with formatted difficulty choices showing deposits
+	var/list/difficulty_choices = list()
+	for(var/difficulty in difficulty_data)
+		var/deposit = difficulty_data[difficulty]["deposit"]
+		difficulty_choices["[difficulty] ([deposit] mark deposit)"] = difficulty
+
+	var/selection = input(user, "Select quest difficulty (deposit required)", src) as null|anything in difficulty_choices
 	if(!selection)
 		return
 
-	var/deposit = difficulty_data[selection]["deposit"]
+	// Get the actual difficulty key from our formatted choice
+	var/actual_difficulty = difficulty_choices[selection]
+	var/deposit = difficulty_data[actual_difficulty]["deposit"]
+
 	if(SStreasury.bank_accounts[user] < deposit)
 		say("Insufficient balance funds. You need [deposit] marks.")
 		return
@@ -80,17 +89,18 @@
 		"Hard" = list("Clear Out", "Beacon", "Miniboss")
 	)
 
-	var/type_selection = input(user, "Select quest type", src) as null|anything in type_choices[selection]
+	var/type_selection = input(user, "Select quest type", src) as null|anything in type_choices[actual_difficulty] // Changed from selection to actual_difficulty
 	if(!type_selection)
 		return
 
+	// Continue with the rest of the proc using actual_difficulty instead of selection
 	var/datum/quest/attached_quest = new()
-	attached_quest.reward_amount = rand(difficulty_data[selection]["reward_min"], difficulty_data[selection]["reward_max"])
-	attached_quest.quest_difficulty = selection
+	attached_quest.reward_amount = rand(difficulty_data[actual_difficulty]["reward_min"], difficulty_data[actual_difficulty]["reward_max"]) // Changed from selection to actual_difficulty
+	attached_quest.quest_difficulty = actual_difficulty // Changed from selection to actual_difficulty
 	attached_quest.quest_type = type_selection
 
 	var/obj/item/paper/scroll/quest/spawned_scroll = new(get_turf(scroll_point))
-	spawned_scroll.base_icon_state = difficulty_data[selection]["icon"]
+	spawned_scroll.base_icon_state = difficulty_data[actual_difficulty]["icon"] // Changed from selection to actual_difficulty
 	spawned_scroll.assigned_quest = attached_quest
 	attached_quest.quest_scroll_ref = WEAKREF(spawned_scroll)
 
@@ -101,7 +111,7 @@
 		attached_quest.quest_giver_name = user.real_name
 		attached_quest.quest_giver_reference = WEAKREF(user)
 
-	var/obj/effect/landmark/quest_spawner/chosen_landmark = find_quest_landmark(selection, type_selection)
+	var/obj/effect/landmark/quest_spawner/chosen_landmark = find_quest_landmark(actual_difficulty, type_selection) // Changed from selection to actual_difficulty
 	if(!chosen_landmark)
 		to_chat(user, span_warning("No suitable location found for this quest!"))
 		qdel(attached_quest)
