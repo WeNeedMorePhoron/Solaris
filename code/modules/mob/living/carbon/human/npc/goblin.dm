@@ -1,5 +1,5 @@
 /mob/living/carbon/human/species/goblin
-	name = "fetid imp"
+	name = "Impoid"
 
 	icon = 'icons/roguetown/mob/monster/goblins.dmi'
 	icon_state = "goblin"
@@ -32,7 +32,7 @@
 	attack_speed = 2
 
 /mob/living/carbon/human/species/goblin/hell
-	name = "hell imp"
+	name = "Hell Impoid"
 	race = /datum/species/goblin/hell
 
 /mob/living/carbon/human/species/goblin/npc/hell
@@ -42,12 +42,12 @@
 	race = /datum/species/goblin/hell
 
 /datum/species/goblin/hell
-	name = "hell imp"
+	name = "Hell Impoid"
 	id = "goblin_hell"
 	raceicon = "goblin_hell"
 
 /mob/living/carbon/human/species/goblin/cave
-	name = "cave imp"
+	name = "Cave Impoid"
 	race = /datum/species/goblin/cave
 
 /mob/living/carbon/human/species/goblin/npc/cave
@@ -57,11 +57,12 @@
 	race = /datum/species/goblin/cave
 
 /datum/species/goblin/cave
+	name = "Cave Impoid"
 	id = "goblin_cave"
 	raceicon = "goblin_cave"
 
 /mob/living/carbon/human/species/goblin/sea
-	name = "sea imp"
+	name = "Brine Impoid"
 	race = /datum/species/goblin/sea
 /mob/living/carbon/human/species/goblin/npc/sea
 	race = /datum/species/goblin/sea
@@ -72,7 +73,7 @@
 	id = "goblin_sea"
 
 /mob/living/carbon/human/species/goblin/moon
-	name = "lunar imp"
+	name = "Mercurial Impoid"
 	race = /datum/species/goblin/moon
 /mob/living/carbon/human/species/goblin/npc/moon
 	race = /datum/species/goblin/moon
@@ -112,7 +113,7 @@
 
 
 /datum/species/goblin
-	name = "urgoblin"
+	name = "impoid"
 	id = "goblin"
 	species_traits = list(NO_UNDERWEAR,NOEYESPRITES)
 	inherent_traits = list(TRAIT_RESISTCOLD, TRAIT_RESISTHIGHPRESSURE, TRAIT_RESISTLOWPRESSURE, TRAIT_RADIMMUNE, TRAIT_CRITICAL_WEAKNESS, TRAIT_NASTY_EATER)
@@ -231,8 +232,8 @@
 		QDEL_NULL(src.charflaw)
 	update_body()
 	faction = list("orcs")
-	name = "goblin"
-	real_name = "goblin"
+	name = "Impoid"
+	real_name = "Impoid"
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
@@ -353,7 +354,7 @@
 //////////////////   INVADER ZIM	//////////////////
 
 /obj/structure/gob_portal
-	name = "Gob Portal"
+	name = "Impish Rift"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "shitportal"
 	max_integrity = 200
