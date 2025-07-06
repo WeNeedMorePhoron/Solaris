@@ -103,7 +103,7 @@
 			B.sender = user
 		P.def_zone = user.zone_selected
 		// Accuracy modification code, same as bow rebalance PR
-		P.accuracy += (user.STAINT * - 9) * 4
+		P.accuracy += (user.STAINT - 9) * 4
 		P.bonus_accuracy += (user.STAINT - 8) * 3
 		if(user.mind)
 			P.bonus_accuracy += (user.mind.get_skill_level(associated_skill) * 5) // +5% per level
