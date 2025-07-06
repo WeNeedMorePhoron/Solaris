@@ -35,6 +35,7 @@
 
 /datum/mapGeneratorModule/cavedirt/lava
 	spawnableTurfs = list(/turf/open/lava=2,/turf/open/floor/rogue/dirt/road=30)
+	allowed_areas = list(/area/provincial/underground/mountains/underkings_maw) // SOLARIS NEWMAP TODO: Old Sunmarch should have this as well
 
 
 /obj/effect/landmark/mapGenerator/rogue/cave/spider
