@@ -184,7 +184,11 @@ var/global/list/roguegamemodes = list("Rebellion", "Bloodsucker and Werewolves",
 			if(51 to 75)
 				pick_bloodsucker()
 				log_game("Antagonists: Bloodsuckers")
-			if(76 to 100)
+			if(76 to 98)
+				pick_bandits()
+				pick_bloodsucker()
+				log_game("Antagonists: Bandits & Bloodsuckers")
+			if(99 to 100)
 				log_game("Major Antagonist: Extended") //gotta put something here.
 
 		/* removing the "minor antagonist" system as we currently need them as major antagonist gamemodes while waiting for our own custom antags
