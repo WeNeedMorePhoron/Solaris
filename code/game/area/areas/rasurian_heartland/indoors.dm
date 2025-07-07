@@ -41,3 +41,12 @@
 
 /area/rasurian_heartland/indoors/artificacy_launchbay/aetherial_road
 	name = "Aetherial Road"
+
+/// BANDIT CAMP ///
+
+/area/rasurian_heartland/indoors/bandit_camp
+	name = "The Dusklands - Interior"
+	first_time_text = /area/rasurian_heartland/outdoors/bandit_camp::first_time_text
+	droning_sound = /area/rasurian_heartland/outdoors/bandit_camp::droning_sound
+	droning_sound_dusk = /area/rasurian_heartland/outdoors/bandit_camp::droning_sound_dusk
+	droning_sound_night = /area/rasurian_heartland/outdoors/bandit_camp::droning_sound_night

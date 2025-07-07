@@ -25,6 +25,9 @@
 /obj/effect/mapping_helpers/access/antag
 	color = JCOLOR_ANTAG
 
+/obj/effect/mapping_helpers/access/antag/bandit
+	our_lockid = /obj/item/roguekey/bandit::lockid
+
 /obj/effect/mapping_helpers/access/antag/underking
 	our_lockid = /obj/item/roguekey/underking::lockid
 

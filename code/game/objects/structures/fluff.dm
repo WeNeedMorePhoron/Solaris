@@ -906,9 +906,66 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/fluff/wallclock/vampire, 32)
 	..()
 
 /obj/structure/fluff/statue/evil
-	name = "statuette"
+	name = "You"
+	desc = "It's what they call \"You\". Though nondescript; it's plaque bares scratched echoes of words..."
 	icon_state = "evilidol"
 	icon = 'icons/roguetown/misc/structure.dmi'
+	// What items the idol will accept
+	var/treasuretypes = list(
+		/obj/item/roguecoin,
+		/obj/item/roguegem,
+		/obj/item/clothing/ring,
+		/obj/item/ingot/gold,
+		/obj/item/ingot/silver,
+		/obj/item/ingot/blacksteel,
+		/obj/item/clothing/neck/roguetown/psicross,
+		/obj/item/reagent_containers/glass/cup,
+		/obj/item/roguestatue,
+		/obj/item/riddleofsteel,
+		/obj/item/listenstone,
+		/obj/item/clothing/neck/roguetown/shalal,
+		/obj/item/clothing/neck/roguetown/horus,
+		/obj/item/rogue/painting,
+		/obj/item/clothing/head/roguetown/crown/serpcrown,
+		/obj/item/clothing/head/roguetown/vampire,
+		/obj/item/scomstone,
+		/obj/item/reagent_containers/lux
+	)
+
+/obj/structure/fluff/statue/evil/examine(mob/user)
+	. = ..()
+	if(HAS_TRAIT(user, TRAIT_BANDIT))
+		. += span_info("You can leave valuables here; contributing to your team's haul.")
+
+/obj/structure/fluff/statue/evil/attackby(obj/item/W, mob/user, params)
+	if(!HAS_TRAIT(user, TRAIT_BANDIT))
+		return ..()
+	var/donatedamnt = W.get_real_price()
+	if(user.mind)
+		if(user)
+			if(W.sellprice <= 0)
+				to_chat(user, span_warning("This item is worthless."))
+				return
+			var/proceed_with_offer = FALSE
+			for(var/TT in treasuretypes)
+				if(istype(W, TT))
+					proceed_with_offer = TRUE
+					break
+			if(proceed_with_offer)
+				playsound(loc,'sound/items/carvty.ogg', 50, TRUE)
+				qdel(W)
+				for(var/mob/player in GLOB.player_list)
+					if(player.mind)
+						if(player.mind.has_antag_datum(/datum/antagonist/bandit))
+							var/datum/antagonist/bandit/bandit_players = player.mind.has_antag_datum(/datum/antagonist/bandit)
+							bandit_players.favor += donatedamnt
+							bandit_players.totaldonated += donatedamnt
+							to_chat(player, ("<font color='yellow'>[user.name] donates [donatedamnt] to the shrine! You now have [bandit_players.favor] favor.</font>"))
+
+			else
+				to_chat(user, span_warning("This item isn't a good offering."))
+				return
+	..()
 
 /obj/structure/fluff/psycross
 	name = "pantheon cross"

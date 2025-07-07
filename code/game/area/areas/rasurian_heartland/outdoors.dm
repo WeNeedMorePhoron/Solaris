@@ -18,3 +18,10 @@
 	first_time_text = null // Visuals should be self-explanatory as to where you are.
 	brief_descriptor = "the skies above sunmarch" // You have to be VERY UNLUCKY to have this happen.
 	general_location = "high above, in the clouds!" // SENTRIES! WHAT DO YOU SEE?!
+
+/area/rasurian_heartland/outdoors/bandit_camp
+	name = "The Dusklands"
+	first_time_text = "THE DUSKLANDS"
+	droning_sound = 'sound/music/area/banditcamp.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null

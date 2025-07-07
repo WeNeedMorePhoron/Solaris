@@ -8,7 +8,7 @@
 	spawn_positions = 0
 	antag_job = TRUE
 	allowed_races = RACES_ALL_KINDS
-	tutorial = "Long ago, you did a crime worthy of your bounty being hung on the wall outside of the local inn. And it's haunted you. Work together with your fellow freemen to establish a camp and rob the locals blind!"
+	tutorial = "Long ago, you did a crime worthy of your bounty being hung on the wall outside of the local inn. Working out of a remote camp with your fellow freemen; disrupt, rob, sabotage - and generally act as a cut-throat."
 
 	outfit = null
 	outfit_female = null
@@ -47,13 +47,4 @@
 	if(H.mind)
 		var/datum/antagonist/new_antag = new /datum/antagonist/bandit()
 		H.mind.add_antag_datum(new_antag)
-		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/masonry, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/armorsmithing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/blacksmithing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
 	addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, choose_name_popup), "BANDIT"), 5 SECONDS)

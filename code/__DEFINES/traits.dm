@@ -94,6 +94,7 @@
 #define TRAIT_NIGHT_OWL "Night Owl"
 #define TRAIT_BEAUTIFUL "Beautiful"
 #define TRAIT_SIMPLE_WOUNDS "simple_wounds"
+#define TRAIT_BANDITCAMP "banditcamp" // Dummy trait that signifies having knowledge of the bandit camp's location
 #define TRAIT_VAMPMANSION "vampiremansion"
 #define TRAIT_VAMP_DREAMS "vamp_dreams"
 #define TRAIT_LIMPDICK "Limp Dick"
@@ -166,6 +167,7 @@
 #define TRAIT_MEGALOPHOBIA "Megalophobia"
 #define TRAIT_WILDMAGIC_BENEFIC "Beneficial Wild Magic"
 #define TRAIT_FIENDKISS "Kiss of the Fiend" //after casting some spells, hurl a firebolt at the same location
+#define TRAIT_BANDIT "Of the Darklands" //recognized by bandits as an ally
 
 
 GLOBAL_LIST_INIT(roguetraits, list(
@@ -315,7 +317,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_MEGALOPHOBIA = span_notice("I hate big buildings, I should stay out of town."),
 	TRAIT_WILDMAGIC_BENEFIC = span_info("I am inspired when witnessing magic going haywire."),
 	TRAIT_FIENDKISS = span_info("When I cast projectile magic, my patron also hurls a fire bolt at the same location."),
-	))
+	TRAIT_BANDIT = span_info("Though the dust of the Dusk War has long ended, it's scars are mine - and this land's countrymen are no heroes."),
+))
 
 // trait accessor defines
 #define ADD_TRAIT(target, trait, source) \

@@ -1363,6 +1363,9 @@
 	dir = 6
 	},
 /obj/structure/chair/stool/rogue,
+/obj/effect/landmark/start/courtagent{
+	dir = 8
+	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
@@ -1905,6 +1908,13 @@
 /obj/structure/gravemarker,
 /turf/open/floor/rogue/dirt/road,
 /area/provincial/outdoors/forest)
+"aFr" = (
+/obj/structure/fluff/traveltile/bandit{
+	aportalgoesto = "BANDITCAMPIN2";
+	aportalid = "BANDITCAMPOUT2"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/provincial/underground/underdark)
 "aFA" = (
 /obj/structure/chair/wood/rogue{
 	dir = 8
@@ -7020,7 +7030,7 @@
 	},
 /area/provincial/underground/dungeon/forsaken_bastille)
 "cog" = (
-/obj/effect/landmark/start/banditlate{
+/obj/effect/landmark/start/adventurerlate{
 	dir = 1
 	},
 /turf/open/floor/rogue/cobblerock,
@@ -10898,15 +10908,6 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/provincial/underground/dungeon/fogotten_church)
-"dEF" = (
-/obj/effect/landmark/start/adventurerlate{
-	dir = 1
-	},
-/obj/effect/landmark/start/wardenlate{
-	dir = 1
-	},
-/turf/open/floor/rogue/cobblerock,
-/area/provincial/outdoors/field)
 "dEG" = (
 /turf/closed/wall/mineral/rogue/pipe{
 	icon_state = "iron_joint"
@@ -11437,10 +11438,11 @@
 /turf/open/floor/rogue/church,
 /area/provincial/underground/dungeon/old_ruin)
 "dNH" = (
-/obj/effect/spawner/lootdrop/roguetown/dungeon/money,
-/obj/effect/spawner/lootdrop/roguetown/dungeon/materials,
-/obj/structure/closet/crate/chest/neu_iron,
-/turf/open/floor/rogue/dirt/road,
+/obj/structure/fluff/traveltile/bandit{
+	aportalgoesto = "BANDITCAMPIN3";
+	aportalid = "BANDITCAMPOUT3"
+	},
+/turf/open/floor/rogue/naturalstone,
 /area/provincial/underground/forest/brightway)
 "dNK" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
@@ -15704,6 +15706,7 @@
 	pixel_y = 20;
 	pixel_x = 10
 	},
+/obj/effect/landmark/start/courtagent,
 /turf/open/floor/carpet/royalblack,
 /area/provincial/outdoors/field)
 "fjY" = (
@@ -22537,7 +22540,7 @@
 /obj/effect/landmark/latejoin,
 /obj/effect/landmark/start/courtagent,
 /turf/open/floor/rogue/cobblerock,
-/area/provincial/outdoors/beach)
+/area/provincial/outdoors/field)
 "htv" = (
 /obj/structure/spider/stickyweb,
 /obj/structure/winch{
@@ -29129,6 +29132,10 @@
 "juA" = (
 /turf/open/floor/rogue/blocks,
 /area/provincial/underground/forest/brightway)
+"juQ" = (
+/obj/machinery/light/rogue/firebowl,
+/turf/open/floor/rogue/dirt,
+/area/provincial/underground/forest)
 "juS" = (
 /obj/structure/stone_tile/surrounding_tile/burnt{
 	dir = 8
@@ -33714,10 +33721,6 @@
 /obj/effect/spawner/lootdrop/roguetown/dungeon,
 /turf/open/floor/rogue/naturalstone,
 /area/provincial/underground/dungeon/hordes_hoard)
-"kSS" = (
-/obj/structure/flora/roguegrass/herb/random,
-/turf/open/floor/rogue/dirt,
-/area/provincial/outdoors/field)
 "kSY" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/rogue/cobblerock,
@@ -33969,11 +33972,6 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/rogue/blocks/green,
 /area/provincial/indoors/town/sewer)
-"kWt" = (
-/obj/effect/decal/remains/saiga,
-/obj/effect/spawner/lootdrop/roguetown/dungeon,
-/turf/open/floor/rogue/dirt/road,
-/area/provincial/underground/forest/brightway)
 "kWA" = (
 /obj/structure/fluff/railing/border{
 	dir = 10
@@ -36442,7 +36440,7 @@
 /turf/open/floor/rogue/cobble,
 /area/provincial/outdoors/town)
 "lPk" = (
-/obj/effect/landmark/start/bandit{
+/obj/effect/landmark/start/adventurerlate{
 	dir = 1
 	},
 /turf/open/floor/rogue/naturalstone,
@@ -45991,6 +45989,13 @@
 	},
 /turf/open/floor/rogue/metal/barograte/open,
 /area/provincial/underground/underdark/sunkencity)
+"oSR" = (
+/obj/structure/fluff/traveltile/bandit{
+	aportalgoesto = "BANDITCAMPIN1";
+	aportalid = "BANDITCAMPOUT1"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/provincial/underground/forest)
 "oSS" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/carpet/lord/left,
@@ -53398,6 +53403,14 @@
 /obj/structure/rack/rogue/shelf,
 /turf/open/floor/rogue/herringbone,
 /area/provincial/indoors/town/mages_university/artificer)
+"rnM" = (
+/obj/structure/roguemachine/atm/directional/south{
+	location_tag = "Adventurer's Guild"
+	},
+/turf/open/floor/rogue/ruinedwood{
+	icon_state = "weird1"
+	},
+/area/provincial/indoors/town/adventurers_guild)
 "rnQ" = (
 /obj/structure/stairs{
 	dir = 1
@@ -73545,12 +73558,6 @@
 /mob/living/simple_animal/hostile/rogue/skeleton/guard,
 /turf/open/floor/rogue/blocks/green,
 /area/provincial/underground/dungeon/forsaken_bastille)
-"yfn" = (
-/obj/effect/landmark/start/bandit{
-	dir = 1
-	},
-/turf/open/floor/rogue/cobblerock,
-/area/provincial/outdoors/forest)
 "yfx" = (
 /turf/open/floor/rogue/metal,
 /area/provincial/indoors/dungeon/giuseppes_toybox)
@@ -78162,12 +78169,12 @@ bgl
 bgl
 bgl
 bgl
-bgl
-bgl
-bgl
-bgl
-bgl
-bgl
+pfE
+pfE
+pfE
+pfE
+pfE
+pfE
 bgl
 bgl
 bgl
@@ -78613,14 +78620,14 @@ bgl
 bgl
 bgl
 bgl
-bgl
-bgl
-bgl
-bgl
-bgl
-bgl
-bgl
-bgl
+pfE
+pfE
+pfE
+pfE
+pfE
+pfE
+pfE
+pfE
 bgl
 bgl
 bgl
@@ -79065,15 +79072,15 @@ bgl
 bgl
 bgl
 bgl
+pfE
+pfE
 bgl
 bgl
 bgl
 bgl
-bgl
-bgl
-bgl
-bgl
-bgl
+pfE
+pfE
+pfE
 bgl
 bgl
 bgl
@@ -79516,16 +79523,16 @@ pfE
 bgl
 bgl
 bgl
+pfE
+pfE
+pfE
 bgl
 bgl
 bgl
 bgl
 bgl
-bgl
-bgl
-bgl
-bgl
-bgl
+pfE
+pfE
 bgl
 bgl
 bgl
@@ -79968,17 +79975,17 @@ bgl
 bgl
 bgl
 bgl
+pfE
+pfE
 bgl
 bgl
 bgl
 bgl
 bgl
 bgl
-bgl
-bgl
-bgl
-bgl
-bgl
+pfE
+pfE
+pfE
 bgl
 bgl
 bgl
@@ -80420,6 +80427,8 @@ bgl
 bgl
 bgl
 bgl
+pfE
+pfE
 bgl
 bgl
 bgl
@@ -80427,10 +80436,8 @@ bgl
 bgl
 bgl
 bgl
-bgl
-bgl
-bgl
-bgl
+pfE
+pfE
 bgl
 bgl
 bgl
@@ -80872,17 +80879,17 @@ bgl
 bgl
 bgl
 bgl
+pfE
+pfE
+aFr
 bgl
 bgl
 bgl
 bgl
 bgl
 bgl
-bgl
-bgl
-bgl
-bgl
-bgl
+pfE
+pfE
 bgl
 bgl
 bgl
@@ -81324,9 +81331,9 @@ bgl
 bgl
 bgl
 bgl
-bgl
-bgl
-bgl
+pfE
+pfE
+aFr
 bgl
 bgl
 bgl
@@ -245493,7 +245500,7 @@ umD
 umD
 umD
 umD
-kSS
+hJN
 hJN
 ajw
 ajw
@@ -254968,7 +254975,7 @@ xFI
 xFI
 xFI
 xFI
-dEF
+xFI
 jQh
 bVo
 bVo
@@ -255420,7 +255427,7 @@ xFI
 xFI
 xFI
 xFI
-dEF
+xFI
 jQh
 bVo
 bVo
@@ -255872,7 +255879,7 @@ xFI
 xFI
 xFI
 xFI
-dEF
+xFI
 jQh
 bVo
 bVo
@@ -256324,7 +256331,7 @@ nfP
 xFI
 xFI
 xFI
-dEF
+xFI
 jQh
 bVo
 bVo
@@ -263017,7 +263024,7 @@ gKm
 bIM
 jRS
 jRS
-jRS
+rnM
 rVu
 rVu
 pUt
@@ -307470,9 +307477,9 @@ xQu
 xQu
 xQu
 xQu
-xQu
-xQu
-xQu
+oSR
+oSR
+oSR
 xQu
 xQu
 xQu
@@ -307922,9 +307929,9 @@ xQu
 xQu
 xQu
 xQu
-xQu
-xQu
-xQu
+rMa
+rMa
+rMa
 xQu
 xQu
 xQu
@@ -308373,10 +308380,10 @@ xQu
 xQu
 xQu
 xQu
-xQu
-xQu
-xQu
-xQu
+rMa
+rMa
+jPD
+jPD
 xQu
 xQu
 xQu
@@ -308821,15 +308828,15 @@ rMa
 fCL
 jPD
 jPD
+jPD
+jPD
 xQu
 xQu
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
+rMa
+jPD
+rMa
+jPD
+rMa
 xQu
 xQu
 xQu
@@ -309273,15 +309280,15 @@ fCL
 rMa
 rMa
 jPD
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
+jPD
+jPD
+jPD
+rMa
+rMa
+jPD
+rMa
+jPD
+rMa
 xQu
 xQu
 xQu
@@ -309724,16 +309731,16 @@ fCL
 fCL
 rMa
 pxx
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
+rRM
+rRM
+jPD
+jPD
+jPD
+jPD
+rMa
+rMa
+jPD
+juQ
 xQu
 xQu
 xQu
@@ -310175,17 +310182,17 @@ xQu
 jPD
 jPD
 jPD
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
+rRM
+rRM
+rRM
+rRM
+rRM
+jPD
+jPD
+jPD
+jPD
+rMa
+jPD
 xQu
 xQu
 xQu
@@ -310630,14 +310637,14 @@ qCA
 qCA
 qCA
 qCA
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
-xQu
+rRM
+rRM
+rRM
+jPD
+jPD
+jPD
+jPD
+jPD
 xQu
 xQu
 xQu
@@ -311085,11 +311092,11 @@ qCA
 qCA
 qCA
 qCA
-xQu
-xQu
-xQu
-xQu
-xQu
+jPD
+jPD
+jPD
+jPD
+jPD
 xQu
 xQu
 xQu
@@ -428250,7 +428257,7 @@ pzC
 pzC
 pzC
 pzC
-yfn
+cog
 joJ
 xQu
 xQu
@@ -477593,8 +477600,8 @@ euY
 euY
 euY
 euY
-euY
-euY
+dNH
+dNH
 euY
 euY
 euY
@@ -478044,10 +478051,10 @@ hhQ
 hhQ
 hhQ
 hhQ
-hhQ
-hhQ
-hhQ
-hhQ
+aTX
+aTX
+aTX
+aTX
 hhQ
 hhQ
 hhQ
@@ -478494,14 +478501,14 @@ hhQ
 hhQ
 hhQ
 hhQ
-bZs
+dxX
 dxX
 aTX
 aTX
 aTX
 dxX
 dxX
-bZs
+dxX
 hhQ
 hhQ
 hhQ
@@ -478947,11 +478954,11 @@ hhQ
 hhQ
 aTX
 dxX
-dxX
-dxX
+aTX
+aTX
 dxX
 hhQ
-dNH
+aTX
 dxX
 aTX
 hhQ
@@ -479400,9 +479407,9 @@ hhQ
 aTX
 aTX
 hhQ
-kWt
 dxX
-bZs
+dxX
+dxX
 hhQ
 hhQ
 dxX
@@ -480757,9 +480764,9 @@ bmy
 bmy
 hhQ
 hhQ
-gkE
+aTX
 dxX
-ukF
+aTX
 dxX
 aTX
 wgq
@@ -491605,7 +491612,7 @@ hhQ
 hhQ
 hhQ
 hhQ
-dxX
+hhQ
 hhQ
 hhQ
 hhQ
@@ -492055,9 +492062,9 @@ hhQ
 hhQ
 hhQ
 hhQ
-dxX
-dxX
-dxX
+hhQ
+hhQ
+hhQ
 hhQ
 hhQ
 hhQ
@@ -492507,8 +492514,8 @@ hhQ
 hhQ
 hhQ
 hhQ
-dxX
-dxX
+hhQ
+hhQ
 hhQ
 hhQ
 hhQ
@@ -492960,7 +492967,7 @@ etB
 etB
 hhQ
 dxX
-dxX
+hhQ
 hhQ
 hhQ
 hhQ
@@ -493412,7 +493419,7 @@ etB
 etB
 hhQ
 dxX
-dxX
+hhQ
 hhQ
 hhQ
 hhQ

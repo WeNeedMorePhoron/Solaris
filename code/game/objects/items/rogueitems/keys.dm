@@ -360,6 +360,11 @@
 	icon_state = "rustkey"
 	lockid = "underking"
 
+/obj/item/roguekey/bandit
+	name = "spiked key"
+	desc = "A rough-cut key. No matter where this might lead; it can't be good."
+	lockid = "bandit"
+
 /obj/item/roguekey/hand
 	name = "hand's key"
 	desc = "This regal key belongs to the Marquis' Right Hand."

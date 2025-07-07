@@ -1,3 +1,4 @@
+/// Technically the basetype for any CentCom Z-level content. Just go with it; it's the status quo because some dumbass wrote this comment smugly not wanting to fix their own techdebt.
 /area/rasurian_heartland
 	name = "The Rasurian Heartland"
 	icon_state = "rasura"

@@ -911,6 +911,9 @@
 /obj/item/reagent_containers/glass/cup/silver,
 /turf/open/floor/carpet/inn,
 /area/provincial/indoors)
+"cx" = (
+/turf/closed/mineral/rogue/bedrock,
+/area/provincial/underground/forest/brightway)
 "cy" = (
 /obj/structure/table/wood{
 	icon_state = "largetable";
@@ -1329,6 +1332,22 @@
 "eh" = (
 /turf/closed/wall/mineral/rogue/decostone/cand,
 /area/rasurian_heartland/indoors/prison)
+"eC" = (
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"eI" = (
+/obj/structure/fluff/traveltile/bandit{
+	name = "Brightway Woods";
+	aportalgoesto = "BANDITCAMPOUT3";
+	aportalid = "BANDITCAMPIN3"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/provincial/underground/forest/brightway)
+"eR" = (
+/obj/structure/fermenting_barrel/water,
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/indoors/bandit_camp)
 "fi" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood2";
@@ -1348,6 +1367,14 @@
 /obj/machinery/light/rogue/wallfire/candle/directional/south,
 /turf/open/floor/rogue/blocks,
 /area/rasurian_heartland/indoors)
+"gp" = (
+/obj/structure/flora/roguetree/stump,
+/turf/open/floor/rogue/grass,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"gw" = (
+/obj/structure/fluff/statue/scare,
+/turf/open/floor/rogue/grass,
+/area/rasurian_heartland/outdoors/bandit_camp)
 "gB" = (
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/dirt,
@@ -1361,9 +1388,30 @@
 	icon_state = "chess"
 	},
 /area/provincial/indoors)
+"gR" = (
+/obj/structure/table/wood{
+	icon_state = "largetable";
+	dir = 5
+	},
+/turf/open/floor/rogue/twig,
+/area/rasurian_heartland/indoors/bandit_camp)
+"ho" = (
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/twig,
+/area/provincial/outdoors/forest/brightway)
+"hr" = (
+/obj/structure/fluff/railing/border{
+	dir = 1
+	},
+/turf/open/floor/rogue/wood,
+/area/provincial/underground/forest/brightway)
 "hx" = (
 /turf/open/floor/rogue/herringbone,
 /area/rasurian_heartland/indoors/prison)
+"hJ" = (
+/obj/structure/flora/roguegrass/bush/wall,
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/outdoors/bandit_camp)
 "hQ" = (
 /turf/open/floor/rogue/blocks,
 /area/rasurian_heartland/indoors)
@@ -1382,6 +1430,27 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/provincial/outdoors/forest)
+"it" = (
+/obj/structure/fluff/railing/fence{
+	dir = 4
+	},
+/turf/open/floor/rogue/grass,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"iX" = (
+/obj/structure/chair/wood/rogue{
+	dir = 4
+	},
+/obj/effect/landmark/start/bandit{
+	dir = 4
+	},
+/turf/open/floor/rogue/twig,
+/area/rasurian_heartland/indoors/bandit_camp)
+"ja" = (
+/turf/closed/wall/mineral/rogue/decostone,
+/area/provincial/underground/forest/brightway)
+"jp" = (
+/turf/open/floor/rogue/grass,
+/area/provincial/outdoors/forest/brightway)
 "jH" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood2";
@@ -1404,6 +1473,20 @@
 "jZ" = (
 /turf/open/floor/rogue/hexstone,
 /area/provincial/indoors)
+"kk" = (
+/turf/closed/wall/mineral/rogue/decostone/end{
+	dir = 4
+	},
+/area/rasurian_heartland/indoors/bandit_camp)
+"kz" = (
+/obj/structure/chair/wood/rogue{
+	dir = 8
+	},
+/obj/effect/landmark/start/bandit{
+	dir = 8
+	},
+/turf/open/floor/rogue/twig,
+/area/rasurian_heartland/indoors/bandit_camp)
 "kB" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/provincial/outdoors/forest)
@@ -1418,18 +1501,79 @@
 /obj/item/rogueweapon/greatsword,
 /turf/open/floor/rogue/cobble,
 /area/rasurian_heartland/indoors)
+"le" = (
+/obj/structure/bed/rogue/inn/hay,
+/obj/item/bedsheet/rogue/cloth,
+/turf/open/floor/rogue/twig,
+/area/rasurian_heartland/indoors/bandit_camp)
 "ll" = (
 /obj/structure/mineral_door/wood/donjon/stone,
 /obj/effect/mapping_helpers/access/rasura/noble,
 /obj/effect/mapping_helpers/lock_door,
 /turf/open/floor/rogue/herringbone,
 /area/rasurian_heartland/indoors/prison)
+"lm" = (
+/turf/closed/wall/mineral/rogue/decostone/long{
+	dir = 1
+	},
+/area/rasurian_heartland/indoors/bandit_camp)
 "lw" = (
 /turf/open/floor/rogue/cobble,
 /area/rasurian_heartland/indoors)
+"lN" = (
+/obj/structure/flora/roguegrass/bush,
+/turf/open/floor/rogue/grass,
+/area/provincial/outdoors/forest/brightway)
+"lW" = (
+/turf/open/floor/rogue/wood,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"me" = (
+/obj/structure/fluff/railing/border{
+	dir = 6
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/provincial/underground/forest/brightway)
+"mw" = (
+/obj/structure/rack/rogue,
+/obj/item/storage/roguebag{
+	pixel_x = -1;
+	pixel_y = 1
+	},
+/obj/item/storage/roguebag{
+	pixel_x = 1;
+	pixel_y = -1
+	},
+/obj/item/storage/roguebag{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/item/storage/roguebag{
+	pixel_x = 5;
+	pixel_y = -5
+	},
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/indoors/bandit_camp)
+"mJ" = (
+/obj/structure/fluff/railing/border{
+	dir = 8
+	},
+/turf/open/water/cleanshallow,
+/area/provincial/outdoors/forest/brightway)
+"mW" = (
+/obj/machinery/light/rogue/hearth,
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/indoors/bandit_camp)
 "nb" = (
 /turf/open/floor/rogue/tile,
 /area/rasurian_heartland/indoors/artificacy_launchbay)
+"nd" = (
+/obj/structure/flora/roguetree/stump/log,
+/turf/open/floor/rogue/dirt,
+/area/provincial/outdoors/forest/brightway)
+"ng" = (
+/obj/structure/flora/roguegrass/bush/wall/tall,
+/turf/open/floor/rogue/grass,
+/area/provincial/outdoors/forest/brightway)
 "nh" = (
 /obj/structure/rack/rogue,
 /turf/open/floor/rogue/herringbone,
@@ -1442,6 +1586,14 @@
 "nH" = (
 /turf/open/floor/rogue/blocks/newstone,
 /area/rasurian_heartland/outdoors)
+"nM" = (
+/obj/structure/mineral_door/wood/donjon{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/access/antag/bandit,
+/obj/effect/mapping_helpers/lock_door,
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/outdoors/bandit_camp)
 "nQ" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood2";
@@ -1451,6 +1603,14 @@
 /obj/item/rogueweapon/sword/cutlass,
 /turf/open/floor/rogue/cobble,
 /area/rasurian_heartland/indoors)
+"nS" = (
+/obj/structure/table/wood{
+	icon_state = "largetable";
+	dir = 6
+	},
+/obj/item/toy/cards/deck,
+/turf/open/floor/rogue/dirt/road,
+/area/rasurian_heartland/outdoors/bandit_camp)
 "nZ" = (
 /obj/item/reagent_containers/powder/salt,
 /obj/item/reagent_containers/powder/salt,
@@ -1466,15 +1626,57 @@
 	},
 /turf/open/floor/rogue/concrete,
 /area/provincial/outdoors/forest)
+"ol" = (
+/turf/open/floor/rogue/naturalstone,
+/area/provincial/underground/forest/brightway)
+"or" = (
+/obj/structure/fluff/statue/tdummy,
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"oA" = (
+/obj/structure/table/wood{
+	icon_state = "largetable";
+	dir = 6
+	},
+/turf/open/floor/rogue/twig,
+/area/rasurian_heartland/indoors/bandit_camp)
 "oC" = (
 /obj/structure/fermenting_barrel/water,
 /obj/machinery/light/rogue/wallfire/candle/directional/north,
 /turf/open/floor/rogue/dirt/road,
 /area/rasurian_heartland/indoors)
+"oL" = (
+/obj/structure/fluff/railing/border{
+	icon_state = "border";
+	dir = 4
+	},
+/turf/open/water/river{
+	icon_state = "rockwd";
+	dir = 4
+	},
+/area/provincial/outdoors/forest/brightway)
+"pb" = (
+/obj/structure/roguetent,
+/turf/open/floor/rogue/dirt/road,
+/area/rasurian_heartland/indoors/bandit_camp)
 "pc" = (
 /obj/machinery/light/rogue/firebowl/standing,
 /turf/open/floor/rogue/herringbone,
 /area/provincial/indoors)
+"pe" = (
+/obj/structure/fluff/statue/evil,
+/turf/open/floor/rogue/grass,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"pj" = (
+/obj/structure/table/wood{
+	icon_state = "largetable";
+	dir = 9
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"pq" = (
+/turf/open/floor/rogue/dirt/road,
+/area/rasurian_heartland/indoors/bandit_camp)
 "pr" = (
 /turf/open/floor/rogue/dirt,
 /area/rasurian_heartland/outdoors)
@@ -1494,6 +1696,13 @@
 /obj/item/rogueweapon/shovel,
 /turf/open/floor/rogue/cobble,
 /area/rasurian_heartland/indoors)
+"pF" = (
+/obj/machinery/light/rogue/wallfire/candle/directional/north,
+/turf/open/floor/rogue/twig,
+/area/provincial/underground/forest/brightway)
+"pJ" = (
+/turf/open/floor/rogue/dirt/road,
+/area/provincial/underground/forest/brightway)
 "pP" = (
 /obj/machinery/anvil,
 /turf/open/floor/rogue/ruinedwood{
@@ -1504,6 +1713,18 @@
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/dirt/road,
 /area/rasurian_heartland/outdoors)
+"qb" = (
+/turf/closed/wall/mineral/rogue/tent,
+/area/rasurian_heartland/indoors/bandit_camp)
+"qf" = (
+/obj/structure/fluff/railing/fence{
+	dir = 4
+	},
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"qh" = (
+/turf/closed/wall/mineral/rogue/wooddark/horizontal,
+/area/rasurian_heartland/indoors/bandit_camp)
 "qj" = (
 /obj/structure/vampire/necromanticbook{
 	pixel_x = -16;
@@ -1513,9 +1734,23 @@
 	icon_state = "weird1"
 	},
 /area/provincial/indoors)
+"qx" = (
+/turf/open/floor/rogue/grass,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"qZ" = (
+/obj/item/reagent_containers/glass/bucket,
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/indoors/bandit_camp)
+"rJ" = (
+/turf/closed/mineral/random/rogue,
+/area/provincial/outdoors/forest/brightway)
 "rQ" = (
 /turf/closed,
 /area/provincial)
+"rW" = (
+/obj/structure/fluff/railing/fence,
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/outdoors/bandit_camp)
 "sk" = (
 /obj/structure/fluff/traveltile/vampire{
 	aportalid = "vampin";
@@ -1529,6 +1764,13 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rasurian_heartland/indoors)
+"sH" = (
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/indoors/bandit_camp)
+"sO" = (
+/obj/structure/rack/rogue,
+/turf/open/floor/rogue/grass,
+/area/rasurian_heartland/indoors/bandit_camp)
 "sQ" = (
 /obj/structure/fluff/railing/border{
 	icon_state = "border";
@@ -1536,6 +1778,31 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/provincial/outdoors/forest)
+"sS" = (
+/turf/open/floor/rogue/woodturned,
+/area/provincial/outdoors/forest/brightway)
+"ta" = (
+/turf/open/water/river{
+	icon_state = "rockwd";
+	dir = 2
+	},
+/area/provincial/underground/forest/brightway)
+"te" = (
+/obj/structure/closet/crate/roguecloset,
+/obj/item/clothing/cloak/raincloak/furcloak{
+	pixel_x = 2;
+	pixel_y = 1
+	},
+/obj/item/clothing/cloak/raincloak/furcloak/black{
+	pixel_x = 3;
+	pixel_y = -4
+	},
+/obj/item/clothing/cloak/raincloak/furcloak/brown{
+	pixel_x = -4;
+	pixel_y = 3
+	},
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/indoors/bandit_camp)
 "tj" = (
 /turf/closed/indestructible/riveted,
 /area/rasurian_heartland/indoors/artificacy_launchbay)
@@ -1552,20 +1819,75 @@
 /obj/machinery/light/rogue/wallfire/candle/directional/south,
 /turf/open/floor/rogue/cobble,
 /area/rasurian_heartland/indoors/prison)
+"ts" = (
+/obj/structure/fluff/traveltile/bandit{
+	name = "Underdark";
+	aportalgoesto = "BANDITCAMPOUT2";
+	aportalid = "BANDITCAMPIN2"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/provincial/underground/forest/brightway)
+"tw" = (
+/obj/structure/fluff/railing/border{
+	icon_state = "border";
+	dir = 4
+	},
+/turf/open/water/cleanshallow,
+/area/provincial/outdoors/forest/brightway)
 "tE" = (
 /obj/machinery/light/rogue/wallfire/candle/directional/west,
 /turf/open/floor/rogue/herringbone,
 /area/rasurian_heartland/indoors/prison)
+"uh" = (
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/dirt/road,
+/area/rasurian_heartland/outdoors/bandit_camp)
 "up" = (
 /obj/item/cooking/pan,
 /turf/open/floor/rogue/tile{
 	icon_state = "chess"
 	},
 /area/provincial/indoors)
+"ut" = (
+/obj/structure/table/wood{
+	icon_state = "largetable";
+	dir = 10
+	},
+/turf/open/floor/rogue/twig,
+/area/rasurian_heartland/indoors/bandit_camp)
+"uz" = (
+/obj/structure/mineral_door/wood/donjon{
+	icon_state = "donjondir"
+	},
+/obj/effect/mapping_helpers/access/antag/bandit,
+/obj/effect/mapping_helpers/lock_door,
+/turf/open/floor/rogue/dirt/road,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"uK" = (
+/obj/structure/flora/roguegrass/bush/wall/tall,
+/turf/open/floor/rogue/grass,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"uN" = (
+/turf/open/water/cleanshallow,
+/area/provincial/underground/forest/brightway)
+"uS" = (
+/turf/open/floor/rogue/twig,
+/area/provincial/underground/forest/brightway)
 "uV" = (
 /obj/machinery/light/rogue/torchholder/directional/north,
 /turf/open/floor/rogue/dirt/road,
 /area/provincial/outdoors/forest)
+"va" = (
+/obj/structure/table/wood{
+	icon_state = "tablewood1"
+	},
+/obj/item/paper/scroll,
+/obj/item/natural/feather{
+	pixel_x = 5;
+	pixel_y = 7
+	},
+/turf/open/floor/rogue/twig,
+/area/rasurian_heartland/indoors/bandit_camp)
 "vl" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood2";
@@ -1584,12 +1906,24 @@
 /obj/item/rogueweapon/shield/tower,
 /turf/open/floor/rogue/cobble,
 /area/rasurian_heartland/indoors)
+"vF" = (
+/obj/structure/rack/rogue/shelf/biggest,
+/turf/open/floor/rogue/dirt/road,
+/area/rasurian_heartland/indoors/bandit_camp)
 "vP" = (
 /turf/closed/wall/mineral/rogue/stone,
 /area/rasurian_heartland/indoors)
 "vQ" = (
 /turf/open/floor/rogue/dirt/road,
 /area/provincial/outdoors/forest)
+"vW" = (
+/obj/structure/flora/roguegrass/bush/wall/tall,
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"wh" = (
+/obj/structure/flora/roguegrass/bush,
+/turf/open/floor/rogue/grass,
+/area/rasurian_heartland/outdoors/bandit_camp)
 "wO" = (
 /turf/closed,
 /area/provincial/outdoors)
@@ -1611,6 +1945,10 @@
 /obj/effect/proc_holder/spell/invoked/heal,
 /turf/open/floor/rogue/blocks,
 /area/rasurian_heartland/indoors)
+"xC" = (
+/obj/structure/bed/rogue/shit,
+/turf/open/floor/rogue/twig,
+/area/provincial/underground/forest/brightway)
 "xI" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/clothing/mask/cigarette/rollie/nicotine,
@@ -1622,6 +1960,9 @@
 /obj/item/clothing/mask/cigarette/rollie/nicotine,
 /turf/open/floor/rogue/herringbone,
 /area/provincial/indoors)
+"xN" = (
+/turf/closed/mineral/random/rogue,
+/area/provincial/underground/forest/brightway)
 "xO" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood2";
@@ -1635,9 +1976,74 @@
 /obj/machinery/light/rogue/wallfire/candle/directional/south,
 /turf/open/floor/rogue/cobble,
 /area/rasurian_heartland/indoors)
+"xQ" = (
+/turf/closed/wall/mineral/rogue/tent{
+	dir = 4
+	},
+/area/rasurian_heartland/indoors/bandit_camp)
+"xS" = (
+/obj/item/reagent_containers/glass/cup/wooden,
+/turf/open/floor/rogue/dirt,
+/area/provincial/underground/forest/brightway)
+"yf" = (
+/turf/open/floor/rogue/cobble,
+/area/rasurian_heartland/indoors/bandit_camp)
+"yg" = (
+/turf/open/floor/rogue/dirt,
+/area/provincial/outdoors/forest/brightway)
+"yp" = (
+/obj/structure/table/wood{
+	icon_state = "largetable";
+	dir = 5
+	},
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"yr" = (
+/obj/structure/fluff/railing/fence,
+/obj/structure/fluff/railing/fence{
+	dir = 4
+	},
+/turf/open/floor/rogue/grass,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"yz" = (
+/turf/closed/wall/mineral/rogue/wood,
+/area/rasurian_heartland/indoors/bandit_camp)
 "yK" = (
 /turf/closed,
 /area/provincial/indoors)
+"zB" = (
+/obj/structure/fluff/railing/border{
+	dir = 10
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/provincial/underground/forest/brightway)
+"zF" = (
+/obj/machinery/light/rogue/oven/west,
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/indoors/bandit_camp)
+"zT" = (
+/obj/structure/rack/rogue/shelf/biggest,
+/obj/item/needle/thorn{
+	pixel_x = -3;
+	pixel_y = 1
+	},
+/obj/item/needle/thorn{
+	pixel_x = 2;
+	pixel_y = -2
+	},
+/obj/item/needle/thorn{
+	pixel_x = 7;
+	pixel_y = -6
+	},
+/turf/open/floor/rogue/twig,
+/area/rasurian_heartland/indoors/bandit_camp)
+"Al" = (
+/obj/structure/table/wood{
+	icon_state = "largetable";
+	dir = 9
+	},
+/turf/open/floor/rogue/twig,
+/area/rasurian_heartland/indoors/bandit_camp)
 "As" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/flashlight/flare/torch/metal,
@@ -1653,13 +2059,48 @@
 	icon_state = "chess"
 	},
 /area/provincial/indoors)
+"Az" = (
+/obj/structure/mineral_door/wood/donjon{
+	icon_state = "donjondir";
+	dir = 4
+	},
+/obj/effect/mapping_helpers/access/antag/bandit,
+/obj/effect/mapping_helpers/lock_door,
+/turf/open/floor/rogue/dirt/road,
+/area/provincial/underground/forest/brightway)
+"AJ" = (
+/obj/structure/rack/rogue,
+/obj/item/natural/bundle/cloth{
+	pixel_x = 3;
+	pixel_y = -4
+	},
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/indoors/bandit_camp)
 "Ba" = (
 /turf/open/floor/rogue/ruinedwood,
 /area/provincial/indoors)
+"Bq" = (
+/obj/structure/mineral_door/wood/donjon{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/access/antag/bandit,
+/turf/open/floor/rogue/dirt,
+/area/provincial/underground/forest/brightway)
 "BD" = (
 /obj/effect/landmark/prisonwarp,
 /turf/open/floor/rogue/blocks,
 /area/rasurian_heartland/indoors/prison)
+"BG" = (
+/obj/item/natural/rock,
+/turf/open/floor/rogue/grass,
+/area/provincial/outdoors/forest/brightway)
+"BL" = (
+/turf/open/water/cleanshallow,
+/area/provincial/outdoors/forest/brightway)
+"BN" = (
+/obj/structure/flora/roguegrass/bush,
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/outdoors/bandit_camp)
 "BY" = (
 /obj/effect/landmark/mapGenerator/rogue/forest{
 	endTurfX = 128;
@@ -1667,6 +2108,24 @@
 	},
 /turf/closed/mineral/rogue/bedrock,
 /area/provincial/outdoors/forest)
+"Cb" = (
+/obj/machinery/gear_painter,
+/turf/open/floor/rogue/grass,
+/area/rasurian_heartland/indoors/bandit_camp)
+"Cn" = (
+/obj/structure/fluff/railing/fence{
+	dir = 1
+	},
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"Ct" = (
+/obj/structure/table/wood{
+	icon_state = "longtable";
+	dir = 4
+	},
+/obj/machinery/light/rogue/torchholder/directional/west,
+/turf/open/floor/rogue/dirt/road,
+/area/rasurian_heartland/indoors/bandit_camp)
 "CB" = (
 /obj/structure/fluff/grindwheel,
 /turf/open/floor/rogue/dirt/road,
@@ -1679,6 +2138,12 @@
 "CO" = (
 /turf/open/floor/rogue/blocks/paving,
 /area/rasurian_heartland/outdoors)
+"Db" = (
+/obj/structure/fluff/railing/fence{
+	dir = 1
+	},
+/turf/open/floor/rogue/grass,
+/area/rasurian_heartland/outdoors/bandit_camp)
 "Dm" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood2";
@@ -1698,6 +2163,36 @@
 "Dw" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rasurian_heartland/indoors)
+"DD" = (
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/twig,
+/area/rasurian_heartland/indoors/bandit_camp)
+"DI" = (
+/obj/structure/fluff/railing/border{
+	icon_state = "border";
+	dir = 10
+	},
+/turf/open/floor/rogue/dirt,
+/area/provincial/outdoors/forest/brightway)
+"DP" = (
+/turf/open/water/river{
+	icon_state = "rockwd";
+	dir = 4
+	},
+/area/provincial/outdoors/forest/brightway)
+"El" = (
+/obj/structure/mineral_door/wood,
+/obj/effect/mapping_helpers/access/antag/bandit,
+/obj/effect/mapping_helpers/lock_door,
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/indoors/bandit_camp)
+"Em" = (
+/obj/structure/fluff/railing/border{
+	icon_state = "border";
+	dir = 9
+	},
+/turf/open/floor/rogue/dirt,
+/area/provincial/outdoors/forest/brightway)
 "Eq" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood2";
@@ -1716,9 +2211,56 @@
 	},
 /turf/open/floor/rogue/tile,
 /area/rasurian_heartland/indoors/artificacy_launchbay)
+"ET" = (
+/obj/structure/fluff/railing/border,
+/turf/open/floor/rogue/wood,
+/area/provincial/underground/forest/brightway)
 "EV" = (
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rasurian_heartland/indoors/prison)
+"EY" = (
+/obj/structure/rack/rogue,
+/obj/item/reagent_containers/glass/bottle/waterskin{
+	pixel_x = 3;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/glass/bottle/waterskin{
+	pixel_x = 0;
+	pixel_y = -3
+	},
+/obj/item/reagent_containers/glass/bottle/waterskin{
+	pixel_x = -1;
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/glass/bottle/waterskin{
+	pixel_x = -4;
+	pixel_y = -10
+	},
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/indoors/bandit_camp)
+"Fb" = (
+/obj/structure/fluff/railing/border{
+	icon_state = "border";
+	dir = 6
+	},
+/turf/open/floor/rogue/dirt,
+/area/provincial/outdoors/forest/brightway)
+"Fy" = (
+/obj/structure/table/wood{
+	icon_state = "largetable";
+	dir = 10
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"FU" = (
+/turf/closed/wall/mineral/rogue/wooddark/window,
+/area/rasurian_heartland/indoors/bandit_camp)
+"FV" = (
+/obj/structure/fluff/railing/border{
+	dir = 5
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/provincial/underground/forest/brightway)
 "Gn" = (
 /obj/structure/mineral_door/wood,
 /obj/effect/mapping_helpers/access/rasura,
@@ -1765,9 +2307,24 @@
 /obj/machinery/light/rogue/wallfire/candle/directional/west,
 /turf/open/floor/rogue/blocks,
 /area/rasurian_heartland/indoors)
+"GS" = (
+/obj/machinery/tanningrack,
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/indoors/bandit_camp)
+"Hi" = (
+/obj/effect/decal/cobbleedge/directional/east,
+/turf/open/floor/rogue/dirt/road,
+/area/rasurian_heartland/indoors/bandit_camp)
 "Hj" = (
 /turf/open/floor/rogue/blocks/green,
 /area/rasurian_heartland/outdoors)
+"HC" = (
+/obj/structure/table/wood{
+	icon_state = "largetable";
+	dir = 8
+	},
+/turf/open/floor/rogue/twig,
+/area/rasurian_heartland/indoors/bandit_camp)
 "HG" = (
 /turf/closed/wall/mineral/rogue/decostone/cand,
 /area/rasurian_heartland/indoors)
@@ -1789,6 +2346,15 @@
 /obj/machinery/light/rogue/wallfire/candle/directional/south,
 /turf/open/floor/rogue/dirt/road,
 /area/rasurian_heartland/indoors)
+"IH" = (
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/dirt/road,
+/area/provincial/outdoors/forest/brightway)
+"IS" = (
+/turf/closed/wall/mineral/rogue/tent{
+	dir = 8
+	},
+/area/rasurian_heartland/indoors/bandit_camp)
 "IV" = (
 /obj/structure/fluff/statue/tdummy,
 /turf/open/floor/rogue/grass,
@@ -1799,6 +2365,34 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rasurian_heartland/indoors)
+"Jm" = (
+/obj/structure/closet/crate/roguecloset,
+/obj/item/clothing/cloak/raincloak{
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/item/clothing/cloak/raincloak/blue{
+	pixel_x = 4;
+	pixel_y = 0
+	},
+/obj/item/clothing/cloak/raincloak/brown{
+	pixel_x = -8;
+	pixel_y = -2
+	},
+/obj/item/clothing/cloak/raincloak/green{
+	pixel_x = 2;
+	pixel_y = -2
+	},
+/obj/item/clothing/cloak/raincloak/mortus{
+	pixel_x = -5;
+	pixel_y = 0
+	},
+/obj/item/clothing/cloak/raincloak/red{
+	pixel_x = 3;
+	pixel_y = -5
+	},
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/indoors/bandit_camp)
 "Jo" = (
 /turf/closed/indestructible/riveted,
 /area/rasurian_heartland/indoors/prison)
@@ -1814,6 +2408,9 @@
 /obj/effect/mapping_helpers/access/rasura,
 /turf/open/floor/rogue/dirt/road,
 /area/rasurian_heartland/indoors)
+"Jv" = (
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/outdoors/bandit_camp)
 "JA" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood2";
@@ -1848,6 +2445,13 @@
 	},
 /turf/open/floor/rogue/tile,
 /area/rasurian_heartland/indoors/artificacy_launchbay)
+"Kg" = (
+/obj/structure/fluff/railing/border{
+	icon_state = "border";
+	dir = 5
+	},
+/turf/open/floor/rogue/dirt,
+/area/provincial/outdoors/forest/brightway)
 "Kk" = (
 /turf/open/floor/rogue/tile/brick,
 /area/rasurian_heartland/indoors/artificacy_launchbay/bay_two)
@@ -1855,12 +2459,24 @@
 /obj/machinery/light/rogue/wallfire/candle/directional/north,
 /turf/open/floor/rogue/dirt/road,
 /area/rasurian_heartland/indoors)
+"Lc" = (
+/obj/machinery/light/rogue/wallfire/candle/directional/north,
+/turf/open/floor/rogue/dirt/road,
+/area/rasurian_heartland/indoors/bandit_camp)
 "Le" = (
 /obj/effect/landmark/events/testportal{
 	aportalloc = "bog"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rasurian_heartland/indoors)
+"Lm" = (
+/obj/structure/flora/roguetree/stump,
+/turf/open/floor/rogue/grass,
+/area/provincial/outdoors/forest/brightway)
+"Lr" = (
+/obj/item/fishingrod,
+/turf/open/floor/rogue/twig,
+/area/provincial/outdoors/forest/brightway)
 "Lz" = (
 /turf/open/floor/rogue/churchbrick,
 /area/rasurian_heartland/outdoors)
@@ -1887,17 +2503,96 @@
 "LU" = (
 /turf/closed/indestructible/riveted/boss/see_through,
 /area/rasurian_heartland/indoors/prison)
+"Mz" = (
+/turf/open/water/river{
+	icon_state = "rockwd";
+	dir = 4
+	},
+/area/provincial/underground/forest/brightway)
 "MD" = (
 /turf/open/floor/rogue/tile/brick,
 /area/rasurian_heartland/indoors/artificacy_launchbay/bay_three)
+"MH" = (
+/obj/structure/rack/rogue,
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/indoors/bandit_camp)
 "MM" = (
 /turf/open/floor/rogue/tile/bfloorz,
 /area/rasurian_heartland/indoors/artificacy_launchbay/podStorage)
+"MV" = (
+/obj/structure/fluff/statue/scare,
+/turf/open/floor/rogue/dirt,
+/area/provincial/outdoors/forest/brightway)
+"MY" = (
+/obj/structure/rack/rogue,
+/obj/item/flashlight/flare/torch/lantern{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/flashlight/flare/torch/lantern{
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/item/flashlight/flare/torch/lantern{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/obj/item/flashlight/flare/torch/lantern{
+	pixel_x = 6;
+	pixel_y = -5
+	},
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/indoors/bandit_camp)
+"Nx" = (
+/obj/structure/table/wood{
+	icon_state = "largetable";
+	dir = 4
+	},
+/turf/open/floor/rogue/twig,
+/area/rasurian_heartland/indoors/bandit_camp)
 "NG" = (
 /obj/item/rogueweapon/shield/wood,
 /obj/structure/rack/rogue,
 /turf/open/floor/rogue/herringbone,
 /area/provincial/indoors)
+"NJ" = (
+/obj/structure/fluff/railing/fence,
+/turf/open/floor/rogue/grass,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"Of" = (
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/grass,
+/area/rasurian_heartland/indoors/bandit_camp)
+"Oq" = (
+/obj/structure/table/wood{
+	icon_state = "largetable";
+	dir = 10
+	},
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/indoors/bandit_camp)
+"Or" = (
+/obj/structure/rack/rogue,
+/obj/item/rope/chain{
+	pixel_x = -3;
+	pixel_y = 2
+	},
+/obj/item/rope/chain{
+	pixel_x = 5;
+	pixel_y = -1
+	},
+/obj/item/rope/chain{
+	pixel_x = -1;
+	pixel_y = -3
+	},
+/obj/item/rope/chain{
+	pixel_x = 3;
+	pixel_y = -5
+	},
+/turf/open/floor/rogue/grass,
+/area/rasurian_heartland/indoors/bandit_camp)
+"OF" = (
+/turf/open/floor/rogue/dirt,
+/area/provincial/underground/forest/brightway)
 "OQ" = (
 /obj/machinery/light/rogue/firebowl/standing,
 /turf/open/floor/rogue/tile{
@@ -1907,12 +2602,30 @@
 "Ph" = (
 /turf/open/floor/rogue/cobble,
 /area/rasurian_heartland/outdoors)
+"Pj" = (
+/turf/open/water/pond,
+/area/provincial/outdoors/forest/brightway)
 "PC" = (
 /turf/open/floor/rogue/blocks,
 /area/rasurian_heartland/indoors/prison)
 "PK" = (
 /turf/open/floor/rogue/tile/bfloorz,
 /area/rasurian_heartland/indoors/artificacy_launchbay/bay_four)
+"PL" = (
+/obj/structure/table/wood{
+	icon_state = "longtable";
+	dir = 8
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rasurian_heartland/indoors/bandit_camp)
+"PX" = (
+/obj/structure/table/wood{
+	icon_state = "largetable";
+	dir = 8
+	},
+/obj/structure/fluff/walldeco/wantedposter,
+/turf/open/floor/rogue/twig,
+/area/rasurian_heartland/indoors/bandit_camp)
 "Qo" = (
 /obj/effect/decal/church_line{
 	dir = 1
@@ -1922,9 +2635,21 @@
 	},
 /turf/open/floor/rogue/tile,
 /area/rasurian_heartland/indoors/artificacy_launchbay)
+"Qp" = (
+/obj/structure/flora/roguegrass/bush/wall,
+/turf/open/floor/rogue/grass,
+/area/rasurian_heartland/outdoors/bandit_camp)
 "QA" = (
 /turf/open/floor/rogue/blocks/bluestone,
 /area/rasurian_heartland/outdoors/supplypod_active_transit)
+"QF" = (
+/obj/structure/roguemachine/hoardmaster,
+/obj/effect/decal/cobbleedge/directional/west,
+/turf/open/floor/rogue/grass,
+/area/rasurian_heartland/indoors/bandit_camp)
+"QO" = (
+/turf/open/water/cleanshallow,
+/area/rasurian_heartland/outdoors/bandit_camp)
 "QP" = (
 /obj/machinery/light/rogue/oven/south,
 /turf/open/floor/rogue/tile{
@@ -1938,6 +2663,14 @@
 	icon_state = "weird1"
 	},
 /area/provincial/indoors)
+"Rh" = (
+/obj/structure/fluff/traveltile/bandit{
+	name = "The Emerald Grove";
+	aportalgoesto = "BANDITCAMPOUT1";
+	aportalid = "BANDITCAMPIN1"
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/provincial/outdoors/forest/brightway)
 "Ru" = (
 /obj/machinery/light/rogue/wallfire/candle/directional/east,
 /turf/open/floor/rogue/herringbone,
@@ -1952,9 +2685,28 @@
 "RX" = (
 /turf/closed/indestructible/riveted,
 /area/start)
+"Sh" = (
+/obj/structure/fermenting_barrel/water,
+/turf/open/floor/rogue/grass,
+/area/provincial/underground/forest/brightway)
+"Si" = (
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/indoors/bandit_camp)
+"Sr" = (
+/obj/structure/mineral_door/wood,
+/obj/effect/mapping_helpers/access/antag/bandit,
+/obj/effect/mapping_helpers/lock_door,
+/turf/open/floor/rogue/dirt/road,
+/area/rasurian_heartland/indoors/bandit_camp)
 "SA" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/rasurian_heartland/outdoors)
+"SK" = (
+/turf/closed/wall/mineral/rogue/tent{
+	dir = 1
+	},
+/area/rasurian_heartland/indoors/bandit_camp)
 "SU" = (
 /turf/open/floor/rogue/church,
 /area/rasurian_heartland/outdoors)
@@ -1965,9 +2717,37 @@
 /obj/effect/landmark/start/vampirespawn,
 /turf/open/floor/rogue/blocks/paving,
 /area/provincial/indoors)
+"To" = (
+/obj/structure/flora/roguegrass/bush,
+/turf/open/floor/rogue/dirt,
+/area/provincial/outdoors/forest/brightway)
+"Tt" = (
+/obj/structure/fluff/railing/border{
+	dir = 9
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/provincial/underground/forest/brightway)
+"Tu" = (
+/obj/structure/fluff/railing/wood,
+/turf/open/floor/rogue/grass,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"TA" = (
+/obj/structure/roguetent,
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/indoors/bandit_camp)
 "TH" = (
 /turf/open/floor/rogue/blocks,
 /area/rasurian_heartland/outdoors/supplypod_active_transit)
+"TN" = (
+/obj/structure/chair/stool/rogue,
+/obj/effect/landmark/start/bandit{
+	dir = 8
+	},
+/turf/open/floor/rogue/twig,
+/area/rasurian_heartland/indoors/bandit_camp)
+"Ua" = (
+/turf/open/floor/rogue/sand,
+/area/provincial/outdoors/forest/brightway)
 "Ub" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood2";
@@ -1979,6 +2759,13 @@
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow,
 /turf/open/floor/rogue/cobble,
 /area/rasurian_heartland/outdoors)
+"Uf" = (
+/obj/structure/table/wood{
+	icon_state = "largetable";
+	dir = 9
+	},
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/indoors/bandit_camp)
 "Ut" = (
 /obj/effect/proc_holder/spell/invoked/heal,
 /obj/structure/table/wood{
@@ -1988,6 +2775,9 @@
 /obj/item/rogueweapon/mace/cudgel,
 /turf/open/floor/rogue/cobble,
 /area/rasurian_heartland/indoors)
+"UK" = (
+/turf/closed/wall/mineral/rogue/wooddark,
+/area/rasurian_heartland/outdoors/bandit_camp)
 "Vh" = (
 /obj/structure/table/wood{
 	icon_state = "tablewood2";
@@ -2000,6 +2790,13 @@
 /obj/item/quiver/bolts,
 /turf/open/floor/rogue/cobble,
 /area/rasurian_heartland/outdoors)
+"Vm" = (
+/obj/structure/chair/stool/rogue,
+/obj/effect/landmark/start/bandit{
+	dir = 4
+	},
+/turf/open/floor/rogue/twig,
+/area/rasurian_heartland/indoors/bandit_camp)
 "Vu" = (
 /obj/machinery/light/rogue/forge,
 /turf/open/floor/rogue/ruinedwood{
@@ -2009,14 +2806,29 @@
 "Vz" = (
 /turf/closed/indestructible/splashscreen,
 /area/start)
+"VD" = (
+/obj/machinery/gear_painter,
+/obj/machinery/light/rogue/wallfire/candle/directional/south,
+/turf/open/floor/rogue/twig,
+/area/rasurian_heartland/indoors/bandit_camp)
 "VF" = (
 /obj/structure/fluff/statue/tdummy,
 /turf/open/floor/rogue/dirt/road,
 /area/rasurian_heartland/outdoors)
+"Wc" = (
+/turf/open/floor/rogue/twig,
+/area/rasurian_heartland/indoors/bandit_camp)
 "Wj" = (
 /obj/machinery/light/rogue/wallfire/candle/directional/south,
 /turf/open/floor/rogue/dirt/road,
 /area/rasurian_heartland/indoors)
+"Wr" = (
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/grass,
+/area/provincial/outdoors/forest/brightway)
+"Ww" = (
+/turf/open/floor/rogue/dirt/road,
+/area/provincial/outdoors/forest/brightway)
 "WB" = (
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/provincial/indoors)
@@ -2029,17 +2841,49 @@
 	},
 /turf/open/floor/rogue/tile,
 /area/rasurian_heartland/indoors/artificacy_launchbay)
+"WI" = (
+/obj/structure/fluff/railing/border{
+	dir = 8
+	},
+/turf/open/water/river{
+	icon_state = "rockwd";
+	dir = 4
+	},
+/area/provincial/outdoors/forest/brightway)
+"WM" = (
+/obj/structure/flora/roguegrass/bush/wall,
+/turf/open/floor/rogue/grass,
+/area/provincial/outdoors/forest/brightway)
+"WV" = (
+/obj/structure/fluff/railing/wood,
+/turf/open/floor/rogue/dirt,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"XA" = (
+/obj/structure/flora/roguetree/burnt,
+/turf/open/floor/rogue/grass,
+/area/provincial/outdoors/forest/brightway)
 "XB" = (
 /obj/structure/mineral_door/wood,
 /obj/effect/mapping_helpers/access/rasura,
 /turf/open/floor/rogue/cobble,
 /area/rasurian_heartland/indoors)
+"XE" = (
+/turf/open/floor/rogue/dirt/road,
+/area/rasurian_heartland/outdoors/bandit_camp)
+"XJ" = (
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/grass,
+/area/rasurian_heartland/outdoors/bandit_camp)
 "XL" = (
 /obj/effect/decal/church_line{
 	dir = 1
 	},
 /turf/open/floor/rogue/tile,
 /area/rasurian_heartland/indoors/artificacy_launchbay)
+"XU" = (
+/obj/structure/closet/crate/chest,
+/turf/open/floor/rogue/dirt/road,
+/area/rasurian_heartland/indoors/bandit_camp)
 "XY" = (
 /obj/effect/decal/church_line{
 	dir = 1
@@ -2058,12 +2902,35 @@
 /obj/effect/landmark/start/vampirelord,
 /turf/open/floor/carpet/inn,
 /area/provincial/indoors)
+"Yp" = (
+/obj/structure/mineral_door/wood/donjon{
+	icon_state = "donjondir";
+	dir = 1
+	},
+/obj/effect/mapping_helpers/access/antag/bandit,
+/obj/effect/mapping_helpers/lock_door,
+/turf/open/floor/rogue/dirt/road,
+/area/rasurian_heartland/outdoors/bandit_camp)
 "Yt" = (
 /turf/open/floor/rogue/dirt/road,
 /area/provincial/indoors)
+"YJ" = (
+/turf/open/floor/rogue/grass,
+/area/provincial/underground/forest/brightway)
 "Zl" = (
 /turf/open/floor/rogue/herringbone,
 /area/provincial/indoors)
+"ZL" = (
+/turf/closed/wall/mineral/rogue/decostone/end{
+	dir = 8
+	},
+/area/rasurian_heartland/indoors/bandit_camp)
+"ZT" = (
+/obj/structure/curtain/bounty{
+	color = "grey"
+	},
+/turf/open/floor/rogue/twig,
+/area/rasurian_heartland/indoors/bandit_camp)
 
 (1,1,1) = {"
 rQ
@@ -7041,10 +7908,10 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+cx
+cx
 rQ
 rQ
 rQ
@@ -7165,17 +8032,17 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+cx
+cx
+cx
+cx
+cx
+ts
+ts
+cx
+cx
 rQ
 rQ
 rQ
@@ -7294,20 +8161,20 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+ol
+pJ
+pJ
+ol
+ol
+ol
+ol
+ol
+ol
+cx
+cx
+cx
 rQ
 rQ
 rQ
@@ -7423,29 +8290,29 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+ol
+pJ
+FV
+me
+pJ
+ol
+pJ
+pJ
+ol
+ol
+ol
+ol
+cx
+cx
+cx
+cx
+cx
+cx
+cx
+cx
+cx
 rQ
 rQ
 rQ
@@ -7553,31 +8420,31 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+uN
+uN
+uN
+hr
+ET
+uN
+uN
+uN
+uN
+uN
+uN
+uN
+uN
+uN
+uN
+uN
+uN
+uN
+uN
+uN
+uN
+cx
+cx
+cx
 rQ
 rQ
 rQ
@@ -7683,35 +8550,35 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+ta
+ta
+ta
+hr
+ET
+ta
+ta
+ta
+ta
+ta
+ta
+ta
+ta
+ta
+ta
+ta
+ta
+ta
+ta
+Mz
+uN
+uN
+uN
+cx
+cx
+cx
+cx
+cx
 rQ
 rQ
 rQ
@@ -7813,37 +8680,37 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+uN
+uN
+uN
+hr
+ET
+uN
+uN
+uN
+uN
+uN
+uN
+uN
+uN
+uN
+uN
+uN
+uN
+uN
+uN
+ta
+ta
+Mz
+uN
+uN
+uN
+uN
+uN
+cx
+cx
+cx
 rQ
 rQ
 rQ
@@ -7943,37 +8810,37 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+xN
+ol
+ol
+Tt
+zB
+ol
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+uN
+uN
+uN
+ta
+ta
+ta
+ta
+Mz
+uN
+uN
+uN
+cx
 rQ
 rQ
 rQ
@@ -8073,37 +8940,37 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+xN
+xN
+ol
+ol
+ol
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+uN
+uN
+uN
+uN
+uN
+ta
+ta
+ta
+uN
+cx
 rQ
 rQ
 rQ
@@ -8203,41 +9070,41 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+xN
+xN
+ol
+ol
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+uN
+uN
+uN
+Mz
+uN
+cx
+cx
+cx
+cx
+cx
 rQ
 rQ
 rQ
@@ -8334,40 +9201,40 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+xN
+ol
+ol
+pJ
+xN
+xN
+xN
+wh
+qx
+Jv
+qx
+qx
+BN
+vW
+qx
+qx
+Jv
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+uN
+Mz
+uN
+yg
+xN
+xN
+xN
+cx
 rQ
 rQ
 rQ
@@ -8459,45 +9326,45 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+cx
+cx
+cx
+cx
+xN
+pJ
+pJ
+pJ
+xN
+xN
+wh
+qx
+qx
+qx
+qx
+qx
+qx
+qx
+qx
+qx
+wh
+Jv
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+uN
+Mz
+BL
+yg
+yg
+xN
+xN
+cx
 rQ
 rQ
 rQ
@@ -8586,48 +9453,48 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+cx
+cx
+qx
+qx
+qx
+wh
+xN
+xN
+ja
+Az
+Az
+ja
+yz
+xQ
+xQ
+xQ
+xQ
+yz
+xQ
+FU
+FU
+xQ
+yz
+qx
+qx
+qx
+qx
+uK
+vW
+qx
+NJ
+jp
+BL
+DP
+BL
+yg
+jp
+jp
+xN
+cx
 rQ
 rQ
 rQ
@@ -8716,48 +9583,48 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+wh
+qx
+qx
+wh
+gp
+qx
+qx
+xN
+xN
+xN
+XE
+XE
+Qp
+qb
+le
+le
+le
+le
+SK
+mw
+AJ
+Or
+Of
+SK
+qx
+qx
+qx
+qx
+qx
+qx
+qx
+NJ
+ng
+BL
+DP
+BL
+yg
+ng
+jp
+xN
+cx
 rQ
 rQ
 rQ
@@ -8846,48 +9713,48 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+wh
+qx
+qx
+qx
+qx
+qx
+qx
+qx
+Qp
+Qp
+XE
+XE
+gw
+yz
+ZT
+ZT
+ZT
+ZT
+yz
+Lc
+pq
+pq
+Cb
+FU
+qx
+qx
+or
+XJ
+or
+qx
+qx
+NJ
+MV
+BL
+DP
+BL
+yg
+jp
+jp
+jp
+cx
 rQ
 rQ
 rQ
@@ -8976,49 +9843,49 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+yz
+xQ
+xQ
+xQ
+xQ
+yz
+Jv
+Jv
+XE
+XE
+XE
+XE
+XE
+TA
+pq
+pq
+pq
+pq
+TA
+pq
+Wc
+pq
+EY
+SK
+qx
+qx
+Jv
+Jv
+Jv
+Jv
+qx
+NJ
+lN
+BL
+DP
+BL
+yg
+jp
+XA
+jp
+cx
+cx
 rQ
 rQ
 rQ
@@ -9105,51 +9972,51 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+qb
+Of
+sO
+MH
+MH
+SK
+Jv
+XE
+XE
+XE
+XE
+XE
+XE
+TA
+pq
+pq
+pq
+pq
+TA
+pq
+Wc
+pq
+MY
+SK
+qx
+WV
+Jv
+XE
+XE
+Jv
+qx
+NJ
+lN
+BL
+DP
+BL
+yg
+jp
+jp
+jp
+jp
+cx
+cx
 rQ
 rQ
 rQ
@@ -9235,51 +10102,51 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+wh
+kk
+QF
+pq
+pq
+pq
+pb
+XE
+XE
+qx
+qx
+XE
+XE
+Jv
+FU
+DD
+Wc
+Wc
+VD
+yz
+pq
+Wc
+pq
+Jm
+FU
+qx
+Tu
+Jv
+XE
+XE
+Jv
+Jv
+NJ
+yg
+BL
+DP
+BL
+yg
+jp
+jp
+XA
+jp
+jp
+cx
 rQ
 rQ
 rQ
@@ -9364,53 +10231,53 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+qx
+lm
+yf
+pq
+pq
+pq
+pb
+XE
+qx
+Qp
+Qp
+qx
+Jv
+XJ
+qb
+va
+Wc
+Wc
+zT
+SK
+pq
+pq
+pq
+te
+SK
+qx
+Jv
+Jv
+Jv
+XE
+Jv
+Jv
+UK
+Fb
+tw
+oL
+tw
+Kg
+jp
+jp
+jp
+jp
+jp
+cx
+cx
 rQ
 rQ
 rQ
@@ -9494,53 +10361,53 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+wh
+qx
+ZL
+Hi
+pq
+pq
+pq
+pb
+XE
+qx
+Qp
+yz
+IS
+TA
+IS
+yz
+IS
+IS
+TA
+IS
+yz
+IS
+El
+IS
+IS
+yz
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+Yp
+Ww
+sS
+sS
+sS
+Ww
+Ww
+Ww
+Ww
+Ww
+Ww
+Rh
+cx
 rQ
 rQ
 rQ
@@ -9618,59 +10485,59 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+cx
+cx
+cx
+cx
+cx
+wh
+qx
+qb
+Si
+MH
+MH
+MH
+SK
+XE
+XE
+qx
+qb
+vF
+pq
+pq
+Ct
+PL
+pq
+pq
+pq
+SK
+eC
+XE
+XE
+XE
+XE
+XE
+XE
+Jv
+XE
+XE
+XE
+XE
+Yp
+Ww
+sS
+sS
+sS
+Ww
+Ww
+Ww
+Ww
+Ww
+Ww
+Rh
+cx
 rQ
 rQ
 rQ
@@ -9747,60 +10614,60 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+jp
+jp
+jp
+jp
+BG
+Db
+qx
+qx
+yz
+IS
+IS
+IS
+IS
+yz
+XE
+XE
+XE
+FU
+pq
+pq
+pq
+pq
+pq
+pq
+pq
+pq
+FU
+XE
+XE
+XE
+XE
+XE
+XE
+XE
+qx
+qx
+qx
+qx
+qx
+UK
+DI
+mJ
+WI
+mJ
+Em
+IH
+Ww
+jp
+jp
+jp
+cx
+cx
 rQ
 rQ
 rQ
@@ -9876,60 +10743,60 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+jp
+jp
+jp
+XA
+jp
+jp
+Db
+gp
+qx
+Jv
+Jv
+Jv
+Jv
+Jv
+Jv
+XE
+XE
+XE
+qb
+sH
+Wc
+Vm
+iX
+Vm
+iX
+Wc
+pq
+SK
+XE
+XE
+XE
+XE
+XE
+Jv
+qx
+qx
+qx
+qx
+qx
+qx
+NJ
+yg
+BL
+DP
+BL
+yg
+jp
+jp
+jp
+jp
+XA
+cx
 rQ
 rQ
 rQ
@@ -10004,62 +10871,62 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+cx
+jp
+Lm
+jp
+Wr
+jp
+jp
+jp
+UK
+qx
+qx
+XE
+Jv
+Jv
+Jv
+Jv
+XE
+XE
+XE
+XE
+TA
+pq
+Wc
+Al
+HC
+PX
+ut
+Wc
+pq
+Sr
+XE
+XE
+XE
+XE
+uh
+Jv
+Jv
+qx
+qx
+qx
+qx
+qx
+NJ
+yg
+BL
+DP
+BL
+yg
+jp
+lN
+jp
+jp
+jp
+cx
 rQ
 rQ
 rQ
@@ -10134,62 +11001,62 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+eI
+ol
+jp
+Ww
+Ww
+yg
+yg
+Ww
+Ww
+uz
+XE
+Jv
+Jv
+Jv
+QO
+QO
+QO
+XE
+XE
+XE
+XE
+TA
+pq
+Wc
+gR
+Nx
+Nx
+oA
+Wc
+pq
+Sr
+XE
+XE
+uh
+pj
+Fy
+Jv
+qx
+qx
+qx
+qx
+eC
+qx
+rW
+lN
+BL
+DP
+BL
+yg
+XA
+jp
+jp
+jp
+cx
+cx
 rQ
 rQ
 rQ
@@ -10264,61 +11131,61 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+eI
+ol
+yg
+yg
+Ww
+Ww
+yg
+Ww
+Ww
+uz
+XE
+Jv
+qx
+eC
+QO
+pe
+lW
+XE
+XE
+XE
+XE
+qb
+pq
+Wc
+kz
+kz
+TN
+kz
+Wc
+pq
+SK
+XE
+Jv
+XE
+yp
+nS
+uh
+qx
+qx
+qx
+qx
+qx
+qx
+NJ
+MV
+BL
+DP
+BL
+yg
+Ww
+jp
+jp
+jp
+cx
 rQ
 rQ
 rQ
@@ -10394,61 +11261,61 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+cx
+ol
+jp
+jp
+jp
+jp
+XA
+jp
+UK
+Jv
+qx
+qx
+qx
+QO
+QO
+QO
+XE
+XE
+XE
+Jv
+FU
+pq
+pq
+pq
+pq
+pq
+pq
+pq
+pq
+FU
+Jv
+XE
+XE
+UK
+Jv
+XE
+qx
+qx
+qx
+qx
+qx
+qx
+NJ
+yg
+BL
+DP
+BL
+yg
+Ww
+jp
+jp
+jp
+cx
 rQ
 rQ
 rQ
@@ -10526,59 +11393,59 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+cx
+cx
+cx
+jp
+jp
+jp
+Db
+wh
+hJ
+uK
+qx
+qx
+eC
+qx
+qx
+qx
+qx
+qx
+qb
+eR
+mW
+GS
+zF
+qZ
+Uf
+Oq
+XU
+SK
+Jv
+XE
+Jv
+Jv
+Jv
+qx
+qx
+Jv
+qx
+qx
+qx
+qx
+rW
+yg
+BL
+DP
+BL
+yg
+jp
+jp
+jp
+cx
+cx
 rQ
 rQ
 rQ
@@ -10660,54 +11527,54 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+cx
+cx
+cx
+cx
+cx
+Qp
+gp
+qx
+qx
+qx
+qx
+qx
+Qp
+Qp
+yz
+qh
+qh
+yz
+qh
+qh
+yz
+IS
+IS
+yz
+XE
+XE
+Jv
+Jv
+qf
+qf
+UK
+nM
+UK
+it
+it
+it
+yr
+yg
+BL
+DP
+BL
+yg
+jp
+jp
+XA
+cx
 rQ
 rQ
 rQ
@@ -10796,48 +11663,48 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+Qp
+qx
+qx
+qx
+cx
+cx
+cx
+cx
+cx
+cx
+cx
+cx
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+XE
+Jv
+eC
+Cn
+jp
+jp
+jp
+Ww
+Ww
+jp
+jp
+jp
+jp
+jp
+BL
+DP
+BL
+Ua
+jp
+jp
+cx
+cx
 rQ
 rQ
 rQ
@@ -10926,47 +11793,47 @@ rQ
 rQ
 rQ
 rQ
+cx
+cx
+cx
+cx
+cx
+cx
 rQ
 rQ
 rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+Jv
+Jv
+xN
+xN
+To
+jp
+XA
+jp
+Ww
+jp
+yg
+jp
+jp
+jp
+BL
+DP
+BL
+Ua
+jp
+jp
+cx
 rQ
 rQ
 rQ
@@ -11066,37 +11933,37 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+cx
+xN
+xN
+xN
+xN
+xN
+xN
+xN
+Jv
+qx
+cx
+cx
+cx
+yg
+jp
+Ww
+Ww
+Ww
+jp
+jp
+jp
+jp
+BL
+DP
+BL
+yg
+jp
+cx
+cx
 rQ
 rQ
 rQ
@@ -11195,37 +12062,37 @@ rQ
 rQ
 rQ
 rQ
+cx
+cx
+YJ
+OF
+OF
+YJ
+YJ
+xN
+xN
+xN
+xN
+Bq
+cx
+cx
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+yg
+Lr
+ho
+Ua
+jp
+ng
+ng
+ng
+WM
+BL
+DP
+BL
+yg
+cx
+cx
 rQ
 rQ
 rQ
@@ -11325,36 +12192,36 @@ rQ
 rQ
 rQ
 rQ
+cx
+Sh
+OF
+OF
+OF
+OF
+YJ
+OF
+YJ
+OF
+OF
+OF
+cx
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+Pj
+Pj
+Pj
+Ua
+Ua
+yg
+yg
+rJ
+rJ
+BL
+DP
+BL
+cx
+cx
 rQ
 rQ
 rQ
@@ -11455,35 +12322,35 @@ rQ
 rQ
 rQ
 rQ
+cx
+xS
+OF
+YJ
+YJ
+OF
+OF
+OF
+OF
+OF
+OF
+OF
+cx
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+Pj
+Pj
+Pj
+Pj
+nd
+cx
+cx
+cx
+cx
+cx
+cx
+cx
+cx
 rQ
 rQ
 rQ
@@ -11585,28 +12452,28 @@ rQ
 rQ
 rQ
 rQ
+cx
+YJ
+OF
+YJ
+xN
+xN
+xN
+OF
+OF
+OF
+cx
+cx
+cx
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+Pj
+Pj
+Pj
+Pj
+cx
+cx
 rQ
 rQ
 rQ
@@ -11715,27 +12582,27 @@ rQ
 rQ
 rQ
 rQ
+cx
+uS
+uS
+OF
+xN
+xN
+OF
+OF
+OF
+OF
+cx
 rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+cx
+cx
+cx
+cx
 rQ
 rQ
 rQ
@@ -11845,17 +12712,17 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+pF
+uS
+YJ
+OF
+OF
+OF
+OF
+OF
+YJ
+cx
 rQ
 rQ
 rQ
@@ -11975,17 +12842,17 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+xC
+uS
+YJ
+YJ
+OF
+OF
+OF
+YJ
+cx
+cx
 rQ
 rQ
 rQ
@@ -12105,16 +12972,16 @@ rQ
 rQ
 rQ
 rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
-rQ
+cx
+cx
+cx
+cx
+cx
+cx
+cx
+cx
+cx
+cx
 rQ
 rQ
 rQ
