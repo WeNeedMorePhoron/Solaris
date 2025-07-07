@@ -407,6 +407,11 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		if(minstr)
 			inspec += "\n<b>MIN.STR:</b> [minstr]"
 
+		if(force)
+			inspec += "\n<b>FORCE:</b> [get_force_string(force)]"
+		if(gripped_intents && !wielded)
+			inspec += "\n<b>WIELDED FORCE:</b> [get_force_string(force_wielded)]"
+
 		if(wbalance)
 			inspec += "\n<b>BALANCE: </b>"
 			if(wbalance < 0)
@@ -469,8 +474,8 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 		if(max_integrity)
 			inspec += "\n<b>DURABILITY:</b> "
-			var/meme = round(((obj_integrity / max_integrity) * 100), 1)
-			inspec += "[meme]%"
+			var/percent = round(((obj_integrity / max_integrity) * 100), 1)
+			inspec += "[percent]% ([obj_integrity])"
 
 		to_chat(usr, "[inspec.Join()]")
 
@@ -1012,27 +1017,24 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 /obj/item/proc/on_juice()
 
-/obj/item/proc/set_force_string()
+/obj/item/proc/get_force_string(var/force)
 	switch(force)
-		if(0 to 4)
-			force_string = "very low"
-		if(4 to 7)
-			force_string = "low"
-		if(7 to 10)
-			force_string = "medium"
-		if(10 to 11)
-			force_string = "high"
-		if(11 to 20) //12 is the force of a toolbox
-			force_string = "robust"
-		if(20 to 25)
-			force_string = "very robust"
+		if(0 to 9)
+			return "Puny"
+		if(10 to 14)
+			return "Weak"
+		if(15 to 19)
+			return "Modest"
+		if(20 to 24)
+			return "Fine"
+		if(25 to 29)
+			return "Great"
+		if(30 to 35)
+			return "Grand"
 		else
-			force_string = "exceptionally robust"
-	last_force_string_check = force
+			return "Mighty"
 
 /obj/item/proc/openTip(location, control, params, user)
-	if(last_force_string_check != force && !(item_flags & FORCE_STRING_OVERRIDE))
-		set_force_string()
 	if(!(item_flags & FORCE_STRING_OVERRIDE))
 		openToolTip(user,src,params,title = name,content = "[desc]<br>[force ? "<b>Force:</b> [force_string]" : ""]",theme = "")
 	else
