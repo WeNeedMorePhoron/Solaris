@@ -332,7 +332,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/leather/hide/warden
 	name = "forestry armor"
-	desc = "A light armor worn by the Wardens of Rasura. Far more durable than leather."
+	desc = "The standard issue light armor of Wardens of Rasura. While often forgone for personal preferences, the Forestry Armor offers a reasonable trade-off between mobility and protection against the various fauna and kith of the wilds. Far more durable than leather."
 	icon = 'icons/roguetown/clothing/special/warden.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/warden.dmi'
 	icon_state = "foresthide"

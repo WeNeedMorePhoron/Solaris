@@ -1805,7 +1805,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/bascinet/antler
 	name = "wardens's helmet"
-	desc = "A strange helmet adorned with antlers worn by the warden of the forest."
+	desc = "The standard issue helmet of the Wardens of Rasura. Despite its flashy appearance and protective structure, many wardens seem to reject this helm in favor of more comfortable options. The regalia never suited them anyways. "
 	icon = 'icons/roguetown/clothing/special/warden.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/warden64.dmi'
 	bloody_icon = 'icons/effects/blood64.dmi'

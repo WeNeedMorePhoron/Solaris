@@ -4,7 +4,7 @@
 	department_flag = GARRISON
 	selection_color = JCOLOR_SOLDIER
 	faction = "Station"
-	total_positions = 4
+	total_positions = 6
 	spawn_positions = 4
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_ALL_KINDS
@@ -47,7 +47,7 @@
 	. = ..()
 	head = /obj/item/clothing/head/roguetown/helmet/bascinet/antler
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/warden
-	cloak = /obj/item/clothing/cloak/wardencloak
+	cloak = /obj/item/clothing/cloak/raincloak/furcloak/woad
 	neck = /obj/item/clothing/neck/roguetown/coif
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
@@ -60,7 +60,7 @@
 	beltr = /obj/item/rogueweapon/stoneaxe/woodcut/wardenpick
 	backr = /obj/item/storage/backpack/rogue/satchel
 	r_hand = /obj/item/rogueweapon/spear
-	backpack_contents = list(/obj/item/rogueweapon/surgery/cautery/purging, /obj/item/flashlight/flare/torch/lantern = 1)
+	backpack_contents = list(/obj/item/rogueweapon/surgery/cautery/purging, /obj/item/needle = 1, /obj/item/flashlight/flare/torch/lantern = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE) //Melee subclass and also garrison cannot have <4 wrestling/unarmed or we default to lethality
@@ -102,21 +102,21 @@
 	. = ..()
 	head = /obj/item/clothing/head/roguetown/helmet/kettle
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/warden
-	cloak = /obj/item/clothing/cloak/wardencloak
-	neck = /obj/item/storage/keyring/guard
+	cloak = /obj/item/clothing/cloak/raincloak/furcloak/woad
+	neck = /obj/item/clothing/neck/roguetown/coif
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	id = /obj/item/scomstone/bad/garrison
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-	beltl = /obj/item/quiver/arrows
+	beltl = /obj/item/storage/keyring/guard
 	belt = /obj/item/storage/belt/rogue/leather
-	beltr = /obj/item/rogueweapon/huntingknife/idagger/navaja
+	beltr = /obj/item/quiver/arrows
 	backr = /obj/item/rogueweapon/stoneaxe/woodcut/wardenpick
 	backl = /obj/item/storage/backpack/rogue/satchel
 	r_hand = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
-	backpack_contents = list(/obj/item/rogueweapon/surgery/cautery/purging, /obj/item/flashlight/flare/torch/lantern = 1)
+	backpack_contents = list(/obj/item/rogueweapon/surgery/cautery/purging, /obj/item/needle = 1, /obj/item/flashlight/flare/torch/lantern = 1, /obj/item/rogueweapon/huntingknife/idagger/navaja = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE) 
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE) 
@@ -155,19 +155,20 @@
 	. = ..()
 	head = /obj/item/clothing/head/roguetown/helmet/leather/saiga
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/warden
-	cloak = /obj/item/clothing/cloak/wardencloak
-	neck = /obj/item/storage/keyring/guard
+	cloak = /obj/item/clothing/cloak/raincloak/furcloak/woad
+	neck = /obj/item/clothing/neck/roguetown/coif
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	id = /obj/item/scomstone/bad/garrison
 	shoes = /obj/item/clothing/shoes/roguetown/sandals
+	beltl = /obj/item/storage/keyring/guard
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/rogueweapon/stoneaxe/woodcut/wardenpick
 	backl = /obj/item/storage/backpack/rogue/satchel
 	l_hand = /obj/item/rogueweapon/shield/wood
-	backpack_contents = list(/obj/item/rogueweapon/surgery/cautery/purging = 1, /obj/item/flashlight/flare/torch/lantern = 1, /obj/item/ritechalk = 1)
+	backpack_contents = list(/obj/item/rogueweapon/surgery/cautery/purging = 1, /obj/item/flashlight/flare/torch/lantern = 1, /obj/item/needle = 1, /obj/item/ritechalk = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE) //Garrison cannot have <4 wrestling or we default to lethality
@@ -207,3 +208,58 @@
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/stave_the_dying)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/acidsplash)
 
+//Warden Squire
+/datum/advclass/bogguardsman/sproutling
+	name = "Sproutling"
+	tutorial = "By choice, exile, or just happenstance, you have become an apprentice to the Wardens. While you have not yet earned your woadcloak, you have undergone the old rites to hear the wilds's murmurs. Follow your fellow Wardens into the woad and beyond."
+	outfit = /datum/outfit/job/roguetown/bogguardsman/sproutling
+	category_tags = list(CTAG_WARDEN)
+
+
+/datum/outfit/job/roguetown/bogguardsman/sproutling/pre_equip(mob/living/carbon/human/H)
+	. = ..()
+	head = /obj/item/clothing/head/roguetown/helmet/kettle
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/warden
+	cloak = /obj/item/clothing/cloak/wardencloak //no blue cloak for the apprentice, you gotta earn it.
+	neck = /obj/item/clothing/neck/roguetown/coif
+	gloves = /obj/item/clothing/gloves/roguetown/leather
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
+	pants = /obj/item/clothing/under/roguetown/trou/leather
+	id = /obj/item/scomstone/bad/garrison
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+	beltl = /obj/item/storage/keyring/guard
+	belt = /obj/item/storage/belt/rogue/leather
+	beltr = /obj/item/rogueweapon/hammer
+	backr = /obj/item/storage/backpack/rogue/satchel
+	backl = /obj/item/rogueweapon/stoneaxe/woodcut/wardenpick
+	r_hand = /obj/item/rogueweapon/spear
+	backpack_contents = list(/obj/item/rogueweapon/surgery/cautery/purging, /obj/item/flashlight/flare/torch/lantern = 1, /obj/item/needle = 1)
+	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE) //Melee subclass and also garrison cannot have <4 wrestling/unarmed or we default to lethality, in this case it's a squire so 2.
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axes, 3, TRUE) //Axes are a part of the Warden identity.
+		H.mind.adjust_skillrank(/datum/skill/combat/maces, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE) //Traversal is a necessary part of the warden kit 
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/tracking, 4, TRUE) //Wardens NEEED tracking to function in finding bodies and outlaws alike 
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/labor/farming, 2, TRUE)
+		H.change_stat("strength", 2)
+		H.change_stat("perception", 1)
+		H.change_stat("endurance", 2)
+		H.change_stat("speed", 1)
+		H.verbs |= /mob/proc/haltyell
+	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_DEATHSIGHT, TRAIT_GENERIC)	
+	ADD_TRAIT(H, TRAIT_SQUIRE_REPAIR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_WOODSMAN, TRAIT_GENERIC) // Longstrider where active, +3 per, +1 speed
+	ADD_TRAIT(H, TRAIT_OUTDOORSMAN, TRAIT_GENERIC)

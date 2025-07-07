@@ -203,7 +203,7 @@
 	throwforce = 16
 	wdefense = 3
 	wbalance = 1
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	thrown_bclass = BCLASS_CHOP
 	tool_behaviour = TOOL_SAW
 	smeltresult = null
