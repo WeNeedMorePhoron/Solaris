@@ -7033,6 +7033,9 @@
 /obj/effect/landmark/start/adventurerlate{
 	dir = 1
 	},
+/obj/effect/landmark/start/adventurer{
+	dir = 1
+	},
 /turf/open/floor/rogue/cobblerock,
 /area/provincial/outdoors/forest)
 "con" = (
@@ -14904,12 +14907,6 @@
 /obj/structure/chair/wood/rogue/chair3,
 /turf/open/floor/rogue/wood,
 /area/provincial/outdoors/town)
-"eVn" = (
-/obj/effect/landmark/start/adventurer{
-	dir = 1
-	},
-/turf/open/floor/rogue/tile,
-/area/provincial/indoors/town/adventurers_guild)
 "eVp" = (
 /obj/item/reagent_containers/glass/bucket/wooden,
 /turf/open/floor/rogue/cobble/mossy,
@@ -36443,6 +36440,9 @@
 /obj/effect/landmark/start/adventurerlate{
 	dir = 1
 	},
+/obj/effect/landmark/start/adventurer{
+	dir = 1
+	},
 /turf/open/floor/rogue/naturalstone,
 /area/provincial/outdoors/forest)
 "lPo" = (
@@ -36717,9 +36717,6 @@
 /area/provincial/outdoors/town)
 "lUm" = (
 /obj/structure/chair/wood/rogue{
-	dir = 1
-	},
-/obj/effect/landmark/start/adventurer{
 	dir = 1
 	},
 /turf/open/floor/rogue/wood/herringbone,
@@ -43292,7 +43289,6 @@
 /area/provincial/indoors/town/mages_university)
 "obI" = (
 /obj/structure/chair/wood/rogue,
-/obj/effect/landmark/start/adventurer,
 /turf/open/floor/rogue/wood/herringbone,
 /area/provincial/indoors/town/adventurers_guild)
 "obT" = (
@@ -49723,10 +49719,6 @@
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/provincial/outdoors/forest)
-"qfo" = (
-/obj/effect/landmark/start/adventurer,
-/turf/open/floor/rogue/cobble,
-/area/provincial/outdoors/town)
 "qfp" = (
 /obj/structure/rack/rogue,
 /obj/item/flint,
@@ -262119,7 +262111,7 @@ qpl
 gKm
 mlI
 eaN
-eVn
+tHC
 wYx
 iRb
 tdp
@@ -262575,7 +262567,7 @@ tHC
 tHC
 xSg
 mJL
-qfo
+tZh
 ifQ
 tZh
 tZh
