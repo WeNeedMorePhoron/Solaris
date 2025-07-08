@@ -25,6 +25,22 @@
 	new /obj/item/kitchen/spoon/plastic(src)
 	new /obj/item/kitchen/fork(src)
 
+/obj/item/storage/gadget/smokingpouch
+	name = "Smoking Pouch"
+	desc = "A small leather roll that holds everything a smoker needs."
+	slot_flags = ITEM_SLOT_HIP
+	icon_state = "smokingpouch"
+	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
+	component_type = /datum/component/storage/concrete/roguetown/smokingpouch
+
+/obj/item/storage/gadget/smokingpouch/PopulateContents()
+	new /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry(src)
+	new /obj/item/reagent_containers/food/snacks/grown/rogue/pipeweeddry(src)
+	new /obj/item/clothing/mask/cigarette/pipe(src)
+	new /obj/item/paper(src)
+	new /obj/item/paper(src)
+
 /obj/item/folding_table_stored
 	name = "folding table"
 	desc = "A folding table, useful for setting up a temporary workspace."
