@@ -1086,6 +1086,10 @@
 "cX" = (
 /turf/open/floor/rogue/carpet/lord/right,
 /area/provincial/indoors)
+"mk" = (
+/obj/structure/far_travel,
+/turf/open/floor/rogue/blocks,
+/area/provincial/indoors)
 "qw" = (
 /obj/structure/fluff/statue/tdummy,
 /turf/open/floor/rogue/cobble,
@@ -1096,6 +1100,11 @@
 "vW" = (
 /turf/open/floor/rogue/cobble,
 /area/provincial/indoors/town/steward/import_platform)
+"Jz" = (
+/obj/effect/landmark/latejoin,
+/obj/structure/far_travel,
+/turf/open/floor/rogue/blocks,
+/area/provincial/indoors)
 "QR" = (
 /turf/open/floor/rogue/dirt,
 /area/provincial/outdoors/forest)
@@ -4415,7 +4424,7 @@ bq
 bq
 bq
 bq
-bq
+mk
 ax
 ab
 aa
@@ -4672,7 +4681,7 @@ bH
 bq
 bH
 bq
-bH
+Jz
 ax
 ab
 aa
@@ -4929,7 +4938,7 @@ bq
 bq
 bq
 bq
-bq
+mk
 ax
 ab
 aa
@@ -5186,7 +5195,7 @@ bH
 bq
 bH
 bq
-bH
+Jz
 ax
 ab
 aa
