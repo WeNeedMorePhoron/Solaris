@@ -14,7 +14,11 @@
 		/mob/living/carbon/human/species/skeleton/npc/ambush,
 		/mob/living/carbon/human/species/human/northern/searaider/ambush
 	)
-	var/miniboss_mob = /mob/living/simple_animal/hostile/boss/lost_swordsman
+	var/miniboss_mob = list(
+		/mob/living/simple_animal/hostile/boss/lost_swordsman,
+		/mob/living/simple_animal/hostile/boss/bandit_leader,
+		/mob/living/simple_animal/hostile/boss/archer_asshole
+		)
 
 /obj/effect/landmark/quest_spawner/proc/generate_quest(datum/quest/new_quest, mob/user)
 	new_quest.quest_receiver_reference = user ? WEAKREF(user) : null
@@ -82,7 +86,7 @@
 				new_quest.target_amount = 1
 		if("Miniboss")
 			new_quest.title = "Defeat [pick("the terrible", "the dreadful", "the monstrous", "the infamous")] [pick("warlord", "beast", "sorcerer", "abomination")]"
-			new_quest.target_mob_type = miniboss_mob
+			new_quest.target_mob_type = pick(miniboss_mob)
 			new_quest.target_amount = 1
 			spawn_miniboss(new_quest)
 
