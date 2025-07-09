@@ -97,7 +97,7 @@
 		if("A name the world must fear") //empowered eldritch blast
 			human.mind.RemoveSpell(/obj/effect/proc_holder/spell/invoked/projectile/eldritchblast)
 			human.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/eldritchblast/empowered)
-			human.change_stat("intelligence", 1)
+			human.mind.adjust_spellpoints(3)
 		if("A body that won't break") //make healthier
 			givehealing(human, patronchoice)
 			human.change_stat("constitution", 1)
