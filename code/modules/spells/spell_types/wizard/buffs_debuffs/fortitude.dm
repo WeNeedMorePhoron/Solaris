@@ -1,7 +1,7 @@
 /obj/effect/proc_holder/spell/invoked/fortitude
 	name = "Fortitude"
 	desc = "Harden one's humors to the fatigues of the body. (-50% Stamina Usage)"
-	cost = 1
+	cost = 3
 	xp_gain = TRUE
 	releasedrain = 60
 	chargedrain = 1
