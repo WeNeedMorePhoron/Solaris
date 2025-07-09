@@ -77,5 +77,4 @@
 		if(isitem(target))
 			var/obj/item/I = target
 			I.throw_at(throw_target, 200, 4)
-	playsound(src, 'sound/magic/swap.ogg', 100)
-	qdel(src)
+	return ..()
