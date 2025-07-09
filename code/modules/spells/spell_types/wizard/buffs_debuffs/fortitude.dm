@@ -7,6 +7,7 @@
 	chargedrain = 1
 	chargetime = 1 SECONDS
 	recharge_time = 2 MINUTES
+	overlay_state = "fortitude"
 	warnie = "spellwarning"
 	school = "transmutation"
 	no_early_release = TRUE
