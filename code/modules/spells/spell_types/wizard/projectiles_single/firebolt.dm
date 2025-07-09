@@ -1,6 +1,6 @@
 /obj/effect/proc_holder/spell/invoked/projectile/firebolt
 	name = "Fire Bolt"
-	desc = "Conjures a searing bolt of arcane fire"
+	desc = "Conjures a searing bolt of arcane fire. Damage is increased by 100% versus soulless creatures."
 	clothes_req = FALSE
 	range = 10
 	projectile_type = /obj/projectile/magic/firebolt
@@ -29,5 +29,6 @@
 	icon_state = "fireball"
 	damage = 20
 	damage_type = BURN
+	npc_damage_mult = 2
 	flag = "magic"
 	range = 10

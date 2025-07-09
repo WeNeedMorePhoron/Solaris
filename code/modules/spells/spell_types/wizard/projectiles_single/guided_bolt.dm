@@ -1,6 +1,6 @@
 /obj/effect/proc_holder/spell/invoked/projectile/guided_bolt
 	name = "Guided Bolt"
-	desc = "Shoot out a bolt of arcane magic in an indirect arc. Difficult to hit, but quick to recharge and able to arc over friendly."
+	desc = "Shoot out a bolt of arcane magic in an indirect arc. Difficult to hit, but quick to recharge and able to arc over friendly. \n\ Damage is increased by 50% versus soulless creatures."
 	clothes_req = FALSE
 	range = 12
 	projectile_type = /obj/projectile/energy/guided_bolt
@@ -32,7 +32,8 @@
 	icon_state = "arcane_barrage"
 	damage = 40
 	damage_type = BRUTE
-	armor_penetration = 10
+	armor_penetration = 0
+	npc_damage_mult = 1.5
 	woundclass = BCLASS_BLUNT
 	arcshot = TRUE
 	nodamage = FALSE
